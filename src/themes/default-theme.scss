@@ -14,20 +14,20 @@ $primary-palette: (
   A400: #1DE9B6,
   A700: #00BFA5,
   contrast: (
-    50: opacify(#000000, 0.87),
-    100: opacify(#000000, 0.87),
-    200: opacify(#000000, 0.87),
-    300: opacify(#000000, 0.87),
-    400: opacify(#000000, 0.87),
-    500: opacify(#FFFFFF, 0.87),
-    600: opacify(#FFFFFF, 0.87),
-    700: opacify(#FFFFFF, 0.87),
-    800: opacify(#FFFFFF, 0.87),
-    900: opacify(#FFFFFF, 0.87),
-    A100: opacify(#000000, 0.87),
-    A200: opacify(#000000, 0.87),
-    A400: opacify(#000000, 0.87),
-    A700: opacify(#FFFFFF, 0.87),
+    50: transparentize(#FFFFFF, 0.87),
+    100: transparentize(#FFFFFF, 0.87),
+    200: transparentize(#FFFFFF, 0.87),
+    300: transparentize(#FFFFFF, 0.87),
+    400: transparentize(#FFFFFF, 0.87),
+    500: transparentize(#000000, 0.87),
+    600: transparentize(#000000, 0.87),
+    700: transparentize(#000000, 0.87),
+    800: transparentize(#000000, 0.87),
+    900: transparentize(#000000, 0.87),
+    A100: transparentize(#FFFFFF, 0.87),
+    A200: transparentize(#FFFFFF, 0.87),
+    A400: transparentize(#FFFFFF, 0.87),
+    A700: transparentize(#000000, 0.87),
   ),
 );
 
@@ -101,7 +101,7 @@ $custom-primary: mat-palette($primary-palette, 200, 100, 700);
 $custom-accent: mat-palette($accent-palette, 200, 100, 200);
 $custom-warn: mat-palette($warn-palette);
 
-$custom-theme: mat-light-theme(
+$custom-theme: mat-dark-theme(
     $custom-primary,
     $custom-accent,
     $custom-warn

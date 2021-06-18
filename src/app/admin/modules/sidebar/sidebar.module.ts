@@ -14,6 +14,7 @@ import { MatRippleModule } from '@angular/material/core';
   ],
   exports: [
     SidebarComponent,
+    ProfilePreviewComponent,
   ],
   imports: [
     CommonModule,

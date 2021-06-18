@@ -22,9 +22,11 @@ export function firstTranslateYAppearance(
   const initial = { transform: 'translateX(40px)', opacity: 0 };
   const final = { transform: 'translateX(0)', opacity: 1 };
 
+  // @ts-ignore
   return trigger(name, [
 
     transition(':enter', [
+      // @ts-ignore
       query(target, [
         style(initial),
         stagger(`${delay}ms`, [

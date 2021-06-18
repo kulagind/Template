@@ -6,16 +6,22 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 import { PatientsListComponent } from './components/patients-list/patients-list.component';
 import { PatientsTableComponent } from './components/patients-table/patients-table.component';
+import { PacientDashboardLayoutComponent } from './components/pacient-dashboard-layout/pacient-dashboard-layout.component';
+import { PacientListLayoutComponent } from './components/pacient-list-layout/pacient-list-layout.component';
 
 
 @NgModule({
   declarations: [
     AdminLayoutComponent,
     PatientsListComponent,
-    PatientsTableComponent
+    PatientsTableComponent,
+    PacientDashboardLayoutComponent,
+    PacientListLayoutComponent,
   ],
   exports: [
-    PatientsTableComponent
+    PatientsTableComponent,
+    PacientDashboardLayoutComponent,
+    PacientListLayoutComponent,
   ],
   imports: [
     CommonModule,

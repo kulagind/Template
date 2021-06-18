@@ -14,6 +14,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { PatientChartStatisticComponent } from './components/patient-chart-statistic/patient-chart-statistic.component';
 import { PatientBarChartStatisticComponent } from './components/patient-bar-chart-statistic/patient-bar-chart-statistic.component';
 import { MatButtonModule } from '@angular/material/button';
+import { PatientPreviewComponent } from './components/patient-preview/patient-preview.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { MatButtonModule } from '@angular/material/button';
     PatientsListPaginatorSliderComponent,
     PatientChartStatisticComponent,
     PatientBarChartStatisticComponent,
+    PatientPreviewComponent,
   ],
   exports: [
     PatientsTableComponent,

@@ -1,0 +1,44 @@
+<div class="sidebar" @first-width-appearance>
+
+  <app-profile-preview
+    *ngIf="profileAnimationTrigger$ | async"
+    [profile]="{ name: 'John Doe', email: 'mail@gmail.com' }"
+    class="sidebar-profile">
+  </app-profile-preview>
+
+  <hr class="sidebar-profile-hr">
+
+  <div class="sidebar-menu" @first-appearance>
+
+    <div class="sidebar-menu-navigation">
+      <div class="sidebar-menu-item">
+        <app-sidebar-item
+          value="Кандидаты"
+          routerLink="applicants"
+          routerLinkActive>
+        </app-sidebar-item>
+      </div>
+
+      <div class="sidebar-menu-item">
+        <app-sidebar-item
+          value="Аналитика"
+          routerLinkActive>
+        </app-sidebar-item>
+      </div>
+    </div>
+
+    <div class="sidebar-menu-settings">
+
+      <div class="sidebar-menu-item sidebar-menu-item_settings">
+        <app-sidebar-item
+          value="Настройки"
+          routerLink="settings"
+          routerLinkActive>
+        </app-sidebar-item>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

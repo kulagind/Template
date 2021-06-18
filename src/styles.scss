@@ -14,7 +14,7 @@ $on-dark-surface: transparentize(#FFFFFF, 0.13);
 $on-dark-surface-medium: transparentize(#FFFFFF, 0.40);
 
 $border: transparentize(#000000, 0.84);
-$background: #121212;
+$background: #F5F5F5;
 
 @mixin font($font-color) {
   color: $font-color;

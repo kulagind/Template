@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Chart} from "chart.js";
 
 @Component({
   selector: 'app-patient-chart-statistic',
@@ -7,9 +8,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientChartStatisticComponent implements OnInit {
 
-  constructor() { }
+  private chart: any;
 
-  ngOnInit(): void {
+  constructor() {
+  }
+
+  ngOnInit() {
+    this.init();
+  }
+
+  private init(): void {
+
+    const labels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+      }]
+    };
+
+    const config: any = {
+      type: 'line',
+      data,
+      options: {}
+    };
+
+    const canvas: any = document.getElementById('canvas');
+    this.chart = new Chart(canvas, config);
   }
 
 }

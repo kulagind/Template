@@ -1,5 +1,5 @@
-@import '~@angular/material/theming';
-@import 'themes/default-theme';
+@import "~@angular/material/theming";
+@import "themes/default-theme.scss";
 
 @include mat-core();
 
@@ -8,23 +8,23 @@ $primary-variant: mat-color(map-get($custom-theme, primary), darker);
 $secondary: mat-color(map-get($custom-theme, accent), default);
 $error: mat-color(map-get($custom-theme, warn), default);
 
-$on-light-surface: transparentize(#000000, 0.13);
-$on-light-surface-medium: transparentize(#000000, 0.40);
-$on-dark-surface: transparentize(#FFFFFF, 0.13);
-$on-dark-surface-medium: transparentize(#FFFFFF, 0.40);
+$on-light-surface: transparentize(#000, 0.13);
+$on-light-surface-medium: transparentize(#000, 0.4);
+$on-dark-surface: transparentize(#fff, 0.13);
+$on-dark-surface-medium: transparentize(#fff, 0.4);
 
-$border: transparentize(#000000, 0.84);
-$background: #F5F5F5;
+$border: transparentize(#000, 0.84);
 
 @mixin font($font-color) {
   color: $font-color;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   font-style: normal;
   font-weight: normal;
 }
 
 @mixin headline_1($font-color) {
   @include font($font-color);
+
   font-weight: 300;
   font-size: 96px;
   line-height: 112px;
@@ -33,6 +33,7 @@ $background: #F5F5F5;
 
 @mixin headline_2($font-color) {
   @include font($font-color);
+
   font-weight: 300;
   font-size: 60px;
   line-height: 72px;
@@ -41,18 +42,21 @@ $background: #F5F5F5;
 
 @mixin headline_3($font-color) {
   @include font($font-color);
+
   font-size: 48px;
   line-height: 56px;
 }
 
 @mixin headline_4($font-color) {
   @include font($font-color);
+
   font-size: 34px;
   line-height: 36px;
 }
 
 @mixin headline_5($font-color) {
   @include font($font-color);
+
   font-size: 24px;
   line-height: 24px;
   letter-spacing: 0.18px;
@@ -60,6 +64,7 @@ $background: #F5F5F5;
 
 @mixin headline_6($font-color) {
   @include font($font-color);
+
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -68,6 +73,7 @@ $background: #F5F5F5;
 
 @mixin subtitle_1($font-color) {
   @include font($font-color);
+
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.15px;
@@ -75,6 +81,7 @@ $background: #F5F5F5;
 
 @mixin subtitle_2($font-color) {
   @include font($font-color);
+
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
@@ -83,6 +90,7 @@ $background: #F5F5F5;
 
 @mixin body_1($font-color) {
   @include font($font-color);
+
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.5px;
@@ -90,6 +98,7 @@ $background: #F5F5F5;
 
 @mixin body_2($font-color) {
   @include font($font-color);
+
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.25px;
@@ -97,6 +106,7 @@ $background: #F5F5F5;
 
 @mixin button($font-color) {
   @include font($font-color);
+
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
@@ -106,6 +116,7 @@ $background: #F5F5F5;
 
 @mixin caption($font-color) {
   @include font($font-color);
+
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.4px;
@@ -113,11 +124,18 @@ $background: #F5F5F5;
 
 @mixin overline($font-color) {
   @include font($font-color);
+
   font-weight: 500;
   font-size: 10px;
   line-height: 16px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+}
+
+@mixin center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 * {
@@ -128,9 +146,9 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: #f5f5f5;
 
-  background-color: $background;
-  @include body_1($on-dark-surface);
+  @include body_1($on-light-surface);
   @include angular-material-theme($custom-theme);
 }
 
@@ -193,7 +211,24 @@ select {
   font: inherit;
 }
 
-html, body { height: 100%; }
+html,
+body { height: 100%; }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}

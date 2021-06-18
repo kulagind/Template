@@ -26,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { PatientCurrentHealthComponent } from './components/patient-current-health/patient-current-health.component';
+import {ApplicantListSearchComponent} from "./components/applicant-list-search/applicant-list-search.component";
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { PatientCurrentHealthComponent } from './components/patient-current-heal
     AdminChatLayoutComponent,
     PrescriptionEditDialogComponent,
     PatientCurrentHealthComponent,
+    ApplicantListSearchComponent
   ],
   exports: [
     PatientsTableComponent,

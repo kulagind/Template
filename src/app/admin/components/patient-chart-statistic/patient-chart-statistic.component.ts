@@ -62,7 +62,7 @@ export class PatientChartStatisticComponent implements OnInit, AfterViewInit {
         },
         elements: {
           point: {
-            radius: 0
+            radius: 5
           },
         },
         scales: {

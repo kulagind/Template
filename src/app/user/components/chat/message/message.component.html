@@ -1,0 +1,11 @@
+<div class="message" >
+  <div *ngIf="message.authorId !== id" class="message__author">
+    {{message.author}}:
+  </div>
+  <div class="message__payload">
+    {{message.payload}}
+  </div>
+  <div class="message__date">
+    {{message.date | date:'HH:mm dd:MM:YYYY'}}
+  </div>
+</div>

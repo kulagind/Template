@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { ChatComponent } from './user/components/chat/chat.component';
 import { TreatmentComponent } from './user/components/treatment/treatment.component';
 import { PressureComponent } from './user/components/pressure/pressure.component';
+import { MessageComponent } from './user/components/chat/message/message.component';
+import {CommonModule} from "@angular/common";
+import {AuthService} from "./shared/services/auth.service";
+
+export function initFactory(authService: AuthService): () => Promise<any> {
+  return (): Promise<any> => {
+    return authService.initUser$().toPromise();
+  }
+}
 
 @NgModule({
   declarations: [
@@ -20,9 +29,11 @@ import { PressureComponent } from './user/components/pressure/pressure.component
     ChatComponent,
     TreatmentComponent,
     PressureComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -30,7 +41,14 @@ import { PressureComponent } from './user/components/pressure/pressure.component
     MatTabsModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initFactory,
+      deps: [AuthService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+.message {
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.message__author {
+  color: rgba(0,0,0,.4);
+  font-size: 12px;
+}
+.message__payload {
+  color: rgba(0,0,0,.6);
+  font-size: 14px;
+}
+.message__date {
+  color: rgba(0,0,0,.4);
+  font-size: 11px;
+}

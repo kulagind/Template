@@ -15,6 +15,7 @@ import {CommonModule} from "@angular/common";
 import {NavbarComponent} from './user/components/navbar/navbar.component';
 
 import {SharedModule} from "./shared/shared.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {SharedModule} from "./shared/shared.module";
     AdminModule,
     MatTabsModule,
     MatIconModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

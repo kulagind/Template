@@ -1,7 +1,27 @@
+@import "src/styles";
+
 .chart {
   width: 580px;
   height: 280px;
   background: #fff;
   box-shadow: 0px 0px 25px 0px #0000000D;
   border-radius: 5px;
+  overflow: hidden;
+  &-info {
+    height: 80px;
+    padding-left: 45px;
+    padding-top: 45px;
+    &-title {
+      @include headline_4($on-light-surface)
+    }
+    &-description {
+      margin-top: 8px;
+      @include body_2($on-light-surface-medium)
+    }
+  }
+}
+
+.canvas {
+  padding-top: 30px;
+  margin-left: -30px;
 }

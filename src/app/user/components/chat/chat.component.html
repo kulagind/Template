@@ -1,1 +1,8 @@
-<p>chat works!</p>
+<div class="messages">
+  <div *ngFor="let message of (chatService.messages$ | async)"
+       class="messages__message"
+       [ngStyle]="{'align-self': message.authorId !== authService.id ? 'flex-start' : 'flex-end'}">
+    <app-message [message]="message" [id]="authService.id"></app-message>
+  </div>
+</div>
+

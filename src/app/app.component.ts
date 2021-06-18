@@ -12,6 +12,9 @@ export class AppComponent implements OnInit {
 
   public readonly title = 'Template';
 
+  constructor() {
+  }
+
   public ngOnInit(): void {
     this.trigger$.next(true);
   }

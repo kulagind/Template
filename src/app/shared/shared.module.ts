@@ -4,6 +4,7 @@ import {CommonModule} from "@angular/common";
 import {ChatComponent} from "./components/chat/chat.component";
 import {MessageComponent} from "./components/chat/message/message.component";
 import {AuthService} from "./services/auth.service";
+import {MatIconModule} from "@angular/material/icon";
 
 export function initFactory(authService: AuthService): () => Promise<any> {
   return (): Promise<any> => {
@@ -13,10 +14,11 @@ export function initFactory(authService: AuthService): () => Promise<any> {
 
 @NgModule({
   declarations: [ChatComponent, MessageComponent],
-  imports: [
-    BrowserModule,
-    CommonModule,
-  ],
+    imports: [
+        BrowserModule,
+        CommonModule,
+        MatIconModule,
+    ],
   providers: [
     {
       provide: APP_INITIALIZER,

@@ -3,11 +3,18 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  cursor: default;
+
+  &__header-cell {
+    color: rgba(0, 0, 0, 0.6);
+    user-select: none;
+  }
 
   &__row {
     display: flex;
     flex: 1;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    max-height: 10%;
   }
 
   &__cell {

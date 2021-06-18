@@ -9,6 +9,9 @@ import { PacientDashboardLayoutComponent } from './components/pacient-dashboard-
 import { PatientsListLayoutComponent } from './components/patient-list-layout/patients-list-layout.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { PatientsListPaginatorComponent } from './components/patients-list-paginator/patients-list-paginator.component';
+import { PatientsListPaginatorSliderComponent } from './components/patients-list-paginator-slider/patients-list-paginator-slider.component';
+import { MatRippleModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -17,6 +20,8 @@ import { MatIconModule } from '@angular/material/icon';
     PatientsTableComponent,
     PacientDashboardLayoutComponent,
     PatientsListLayoutComponent,
+    PatientsListPaginatorComponent,
+    PatientsListPaginatorSliderComponent
   ],
   exports: [
     PatientsTableComponent,
@@ -29,7 +34,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSidenavModule,
     RouterModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatRippleModule
   ],
   bootstrap: [ AdminLayoutComponent ],
 

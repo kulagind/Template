@@ -1,0 +1,21 @@
+<div class="applicant-list-paginator">
+
+  <button
+    (click)="switchToPrevPage()"
+    [disabled]="(pagination$ | async)?.page < 2"
+    mat-icon-button
+    class="applicant-list-paginator-button">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <app-patients-list-paginator-slider [count]="count" [pagination$]="pagination$"></app-patients-list-paginator-slider>
+
+  <button
+    (click)="switchToNextPage()"
+    mat-icon-button
+    [disabled]="(pagination$ | async)?.page >= count / (pagination$ | async)?.size "
+    class="applicant-list-paginator-button">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+
+</div>

@@ -1,0 +1,37 @@
+<div class="patients-table">
+  <div class="patients-table__row patients-table__header-row">
+    <div class="patients-table__cell patients-table__header-cell">
+      Имя
+    </div>
+    <div class="patients-table__cell patients-table__header-cell">
+      Фамилия
+    </div>
+    <div class="patients-table__cell patients-table__header-cell">
+      Возраст
+    </div>
+    <div class="patients-table__cell patients-table__header-cell">
+      Телефон
+    </div>
+    <div class="patients-table__cell patients-table__header-cell patients-table__cell-options">
+    </div>
+  </div>
+  <div class="patients-table__row" *ngFor="let patient of patients">
+    <div class="patients-table__cell">
+      {{patient.firstName}}
+    </div>
+    <div class="patients-table__cell">
+      {{patient.lastName}}
+    </div>
+    <div class="patients-table__cell">
+      {{patient.age}}
+    </div>
+    <div class="patients-table__cell">
+      {{patient.phoneNumber}}
+    </div>
+    <div class="patients-table__cell patients-table__cell-options">
+      <button mat-icon-button>
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

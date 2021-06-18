@@ -1,0 +1,15 @@
+<div class="paginator-slider">
+  <ng-container *ngIf="(pagesForView$ | async)?.length">
+    <ng-container *ngFor="let page of pagesForView$ | async">
+      <span
+        [class.applicant-list-paginator-pages-page_active]="(pagination$ | async)?.page === page"
+        class="paginator-slider-page"
+        (click)="paginate({ page: page, size: 10 })"
+        matRipple
+        matRippleColor="rgba(31, 147, 122, 10%)">{{page}}</span>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="!(pagesForView$ | async)?.length">
+    Ничего не найдено
+  </ng-container>
+</div>

@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class AuthService {
-  private user: ReplaySubject<User> = new ReplaySubject<User>(1);
+  private user: ReplaySubject<User | void> = new ReplaySubject<User | void>(1);
   private _id: number | string = '';
 
   constructor(
@@ -17,12 +17,12 @@ export class AuthService {
   ) {
   }
 
-  setUser(user: User): void {
-    this._id = user?.id;
+  setUser(user: User | void): void {
+    this._id = (user as User).id;
     this.user.next(user);
   }
 
-  get user$(): Observable<User> {
+  get user$(): Observable<User | void> {
     return this.user.asObservable();
   }
 

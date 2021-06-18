@@ -7,6 +7,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {RouterModule} from "@angular/router";
 import { PacientDashboardLayoutComponent } from './components/pacient-dashboard-layout/pacient-dashboard-layout.component';
 import { PacientListLayoutComponent } from './components/pacient-list-layout/pacient-list-layout.component';
+import { PatientChartStatisticComponent } from './components/patient-chart-statistic/patient-chart-statistic.component';
+import { PatientBarChartStatisticComponent } from './components/patient-bar-chart-statistic/patient-bar-chart-statistic.component';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { PacientListLayoutComponent } from './components/pacient-list-layout/pac
     AdminLayoutComponent,
     PacientDashboardLayoutComponent,
     PacientListLayoutComponent,
+    PatientChartStatisticComponent,
+    PatientBarChartStatisticComponent,
   ],
   imports: [
     CommonModule,

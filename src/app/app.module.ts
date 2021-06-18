@@ -16,6 +16,7 @@ import { PressureComponent } from './user/components/pressure/pressure.component
 import { MessageComponent } from './user/components/chat/message/message.component';
 import {CommonModule} from "@angular/common";
 import {AuthService} from "./shared/services/auth.service";
+import { NavbarComponent } from './user/components/navbar/navbar.component';
 
 export function initFactory(authService: AuthService): () => Promise<any> {
   return (): Promise<any> => {
@@ -31,6 +32,7 @@ export function initFactory(authService: AuthService): () => Promise<any> {
     TreatmentComponent,
     PressureComponent,
     MessageComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

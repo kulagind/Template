@@ -1,20 +1,10 @@
-<mat-tab-group>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">square_foot</mat-icon>
-    </ng-template>
-    <app-pressure></app-pressure>
-  </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">question_answer</mat-icon>
-    </ng-template>
-    <app-chat></app-chat>
-  </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">health_and_safety</mat-icon>
-    </ng-template>
-    <app-treatment></app-treatment>
-  </mat-tab>
-</mat-tab-group>
+<div class="container">
+  <div class="header">Header</div>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-navbar></app-navbar>
+</div>
+

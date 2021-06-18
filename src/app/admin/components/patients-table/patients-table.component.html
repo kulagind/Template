@@ -1,7 +1,16 @@
 <div class="patients-table">
-  <div class="patients-table__row">
+  <div class="patients-table__row" *ngFor="let patient of patients">
     <div class="patients-table__cell">
-
+      {{patient.firstName}}
+    </div>
+    <div class="patients-table__cell">
+      {{patient.lastName}}
+    </div>
+    <div class="patients-table__cell">
+      {{patient.age}}
+    </div>
+    <div class="patients-table__cell">
+      {{patient.phoneNumber}}
     </div>
   </div>
 </div>

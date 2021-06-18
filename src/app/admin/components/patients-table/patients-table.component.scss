@@ -1,12 +1,22 @@
-.patents-table {
+.patients-table {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+
   &__row {
     display: flex;
+    flex: 1;
     border-bottom: 2px solid rgba(0, 0, 0, 0.05);;
   }
+
   &__cell {
     height: 100%;
     flex: 1;
+    min-width: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

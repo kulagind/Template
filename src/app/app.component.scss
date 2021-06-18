@@ -13,12 +13,12 @@
 }
 
 .title {
-  @include headline_1($on-dark-surface);
+  @include headline_1($on-light-surface);
   margin-bottom: 15px;
 }
 
 .description {
   width: 70%;
-  @include body_2($on-dark-surface-medium);
-  margin-bottom: 35px;
+  @include body_2($on-light-surface-medium);
+  margin-bottom: 45px;
 }

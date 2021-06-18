@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Observable, ReplaySubject} from "rxjs";
-import {Message} from "../../interfaces/chat";
+import {Message} from "../../../user/interfaces/chat";
 
 @Injectable()
 export class ChatService {

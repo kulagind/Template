@@ -9,27 +9,20 @@ import { AdminModule } from './admin/admin.module';
 import { LayoutComponent } from './user/components/layout/layout.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
-import { ChatComponent } from './user/components/chat/chat.component';
+import { ChatComponent } from './shared/components/chat/chat.component';
 import { TreatmentComponent } from './user/components/treatment/treatment.component';
 import { PressureComponent } from './user/components/pressure/pressure.component';
-import { MessageComponent } from './user/components/chat/message/message.component';
+import { MessageComponent } from './shared/components/chat/message/message.component';
 import {CommonModule} from "@angular/common";
 import {AuthService} from "./shared/services/auth.service";
-
-export function initFactory(authService: AuthService): () => Promise<any> {
-  return (): Promise<any> => {
-    return authService.initUser$().toPromise();
-  }
-}
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    ChatComponent,
     TreatmentComponent,
     PressureComponent,
-    MessageComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,15 +32,8 @@ export function initFactory(authService: AuthService): () => Promise<any> {
     MatButtonModule,
     AdminModule,
     MatTabsModule,
-    MatIconModule
-  ],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initFactory,
-      deps: [AuthService],
-      multi: true
-    }
+    MatIconModule,
+    SharedModule
   ],
   bootstrap: [AppComponent]
 })

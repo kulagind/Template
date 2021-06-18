@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs/operators";
-import {PAGES} from "../../mocks/pages";
+import {CHAT_PAGE, PAGES} from "../../mocks/pages";
 
 @Component({
   selector: 'app-layout',
@@ -11,6 +11,7 @@ import {PAGES} from "../../mocks/pages";
 export class LayoutComponent implements OnInit {
 
   public title: string = 'Главная';
+  public readonly CHAT = CHAT_PAGE;
 
   constructor(
     private router: Router
@@ -18,7 +19,7 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit(): void {
     // @ts-ignore
-    this.title = PAGES[window.location.pathname.split('/').pop()] || 'Главная'
+    this.title = PAGES[window.location.pathname.split('/').pop()] || 'Главная';
     this.router.events.pipe(
       filter(events => (events instanceof NavigationEnd))
     ).subscribe(e => {

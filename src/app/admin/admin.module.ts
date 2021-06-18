@@ -10,7 +10,7 @@ import { PatientsListLayoutComponent } from './components/patient-list-layout/pa
 import { MatIconModule } from '@angular/material/icon';
 import { PatientsListPaginatorComponent } from './components/patients-list-paginator/patients-list-paginator.component';
 import { PatientsListPaginatorSliderComponent } from './components/patients-list-paginator-slider/patients-list-paginator-slider.component';
-import { MatLineModule, MatRippleModule } from '@angular/material/core';
+import { MatLineModule, MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { PatientChartStatisticComponent } from './components/patient-chart-statistic/patient-chart-statistic.component';
 import { PatientBarChartStatisticComponent } from './components/patient-bar-chart-statistic/patient-bar-chart-statistic.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,9 +18,13 @@ import { PrescriptionWidgetComponent } from './components/prescription-widget/pr
 import { MatListModule } from '@angular/material/list';
 import { PatientPreviewComponent } from './components/patient-preview/patient-preview.component';
 import { AdminChatLayoutComponent } from './components/admin-chat-layout/admin-chat-layout.component';
-import {AppModule} from "../app.module";
-import {SharedModule} from "../shared/shared.module";
-import {ChatComponent} from "../shared/components/chat/chat.component";
+import { SharedModule } from '../shared/shared.module';
+import { PrescriptionEditDialogComponent } from './components/prescription-edit-dialog/prescription-edit-dialog.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -36,6 +40,7 @@ import {ChatComponent} from "../shared/components/chat/chat.component";
     PrescriptionWidgetComponent,
     PatientPreviewComponent,
     AdminChatLayoutComponent,
+    PrescriptionEditDialogComponent,
   ],
   exports: [
     PatientsTableComponent,
@@ -54,7 +59,13 @@ import {ChatComponent} from "../shared/components/chat/chat.component";
     MatRippleModule,
     MatListModule,
     MatLineModule,
-    SharedModule
+    SharedModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   bootstrap: [ AdminLayoutComponent ],
 

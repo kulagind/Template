@@ -5,6 +5,7 @@ import { ProfilePreviewComponent } from './components/profile-preview/profile-pr
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatRippleModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MatRippleModule } from '@angular/material/core';
     CommonModule,
     RouterModule,
     MatRippleModule,
+    MatDialogModule,
   ],
   bootstrap: [
     SidebarComponent,

@@ -1,0 +1,31 @@
+@import "src/styles";
+
+.current-health {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 280px;
+  height: 280px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.health-icon {
+  right: -30px;
+  bottom: 0;
+  position: absolute;
+  width: 240px;
+}
+
+.info {
+  &-title {
+    @include headline_2($on-light-surface)
+  }
+  &-description {
+    @include body_2($on-light-surface-medium)
+  }
+}

@@ -25,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { PatientCurrentHealthComponent } from './components/patient-current-health/patient-current-health.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     PatientPreviewComponent,
     AdminChatLayoutComponent,
     PrescriptionEditDialogComponent,
+    PatientCurrentHealthComponent,
   ],
   exports: [
     PatientsTableComponent,

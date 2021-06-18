@@ -16,6 +16,7 @@ import { PatientBarChartStatisticComponent } from './components/patient-bar-char
 import { MatButtonModule } from '@angular/material/button';
 import { PrescriptionWidgetComponent } from './components/prescription-widget/prescription-widget.component';
 import { MatListModule } from '@angular/material/list';
+import { PatientPreviewComponent } from './components/patient-preview/patient-preview.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { MatListModule } from '@angular/material/list';
     PatientChartStatisticComponent,
     PatientBarChartStatisticComponent,
     PrescriptionWidgetComponent,
+    PatientPreviewComponent,
   ],
   exports: [
     PatientsTableComponent,

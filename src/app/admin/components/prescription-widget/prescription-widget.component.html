@@ -1,0 +1,37 @@
+<div class="prescription-widget">
+  <div class="prescription-widget__head">
+    <p class="head__title">
+      Лечение
+    </p>
+    <button mat-icon-button>
+      <mat-icon>
+        add_circle_outline
+      </mat-icon>
+    </button>
+  </div>
+  <div class="prescription-widget__list">
+    <mat-list>
+      <div mat-subheader>Лечение</div>
+      <ng-container *ngFor="let prescription of prescriptions">
+        <mat-list-item *ngIf="prescription.type === 0" class="prescription-widget__item">
+          <div mat-line>{{prescription.title}}</div>
+          <div mat-line> {{prescription.description}} </div>
+          <button class="prescription-widget__item-edit" mat-icon-button>
+            <mat-icon>edit</mat-icon>
+          </button>
+        </mat-list-item>
+      </ng-container>
+      <mat-divider></mat-divider>
+      <div mat-subheader>Рекомендации</div>
+      <ng-container *ngFor="let prescription of prescriptions">
+        <mat-list-item *ngIf="prescription.type === 1" class="prescription-widget__item">
+          <div mat-line>{{prescription.title}}</div>
+          <div mat-line> {{prescription.description}} </div>
+          <button class="prescription-widget__item-edit" mat-icon-button>
+            <mat-icon>edit</mat-icon>
+          </button>
+        </mat-list-item>
+      </ng-container>
+    </mat-list>
+  </div>
+</div>

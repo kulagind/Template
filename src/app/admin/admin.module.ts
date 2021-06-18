@@ -10,12 +10,18 @@ import { PatientsListLayoutComponent } from './components/patient-list-layout/pa
 import { MatIconModule } from '@angular/material/icon';
 import { PatientsListPaginatorComponent } from './components/patients-list-paginator/patients-list-paginator.component';
 import { PatientsListPaginatorSliderComponent } from './components/patients-list-paginator-slider/patients-list-paginator-slider.component';
-import { MatLineModule, MatRippleModule } from '@angular/material/core';
+import { MatLineModule, MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { PatientChartStatisticComponent } from './components/patient-chart-statistic/patient-chart-statistic.component';
 import { PatientBarChartStatisticComponent } from './components/patient-bar-chart-statistic/patient-bar-chart-statistic.component';
 import { MatButtonModule } from '@angular/material/button';
 import { PrescriptionWidgetComponent } from './components/prescription-widget/prescription-widget.component';
 import { MatListModule } from '@angular/material/list';
+import { PrescriptionEditDialogComponent } from './components/prescription-edit-dialog/prescription-edit-dialog.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -29,6 +35,7 @@ import { MatListModule } from '@angular/material/list';
     PatientChartStatisticComponent,
     PatientBarChartStatisticComponent,
     PrescriptionWidgetComponent,
+    PrescriptionEditDialogComponent,
   ],
   exports: [
     PatientsTableComponent,
@@ -46,7 +53,13 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatRippleModule,
     MatListModule,
-    MatLineModule
+    MatLineModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   bootstrap: [ AdminLayoutComponent ],
 

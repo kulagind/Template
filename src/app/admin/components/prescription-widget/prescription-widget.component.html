@@ -3,7 +3,7 @@
     <p class="head__title">
       Лечение
     </p>
-    <button mat-icon-button>
+    <button mat-icon-button (click)="handleCreateButton()">
       <mat-icon>
         add_circle_outline
       </mat-icon>
@@ -16,7 +16,7 @@
         <mat-list-item *ngIf="prescription.type === 0" class="prescription-widget__item">
           <div mat-line>{{prescription.title}}</div>
           <div mat-line> {{prescription.description}} </div>
-          <button class="prescription-widget__item-edit" mat-icon-button>
+          <button (click)="handleEditButton(prescription)" class="prescription-widget__item-edit" mat-icon-button>
             <mat-icon>edit</mat-icon>
           </button>
         </mat-list-item>
@@ -27,7 +27,7 @@
         <mat-list-item *ngIf="prescription.type === 1" class="prescription-widget__item">
           <div mat-line>{{prescription.title}}</div>
           <div mat-line> {{prescription.description}} </div>
-          <button class="prescription-widget__item-edit" mat-icon-button>
+          <button (click)="handleEditButton(prescription)" class="prescription-widget__item-edit" mat-icon-button>
             <mat-icon>edit</mat-icon>
           </button>
         </mat-list-item>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Prescription } from '../../types/prescription.type';
 import { PrescriptionTypes } from '../../enums/prescription-types.enum';
+import { MatDialog } from '@angular/material/dialog';
+import { PrescriptionEditDialogComponent } from '../prescription-edit-dialog/prescription-edit-dialog.component';
 
 @Component({
   selector: 'app-prescription-widget',
@@ -27,9 +29,28 @@ export class PrescriptionWidgetComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog,
+  ) { }
 
   public ngOnInit(): void {
+  }
+
+  public handleEditButton(prescription: Prescription): void {
+    this.dialog.open(PrescriptionEditDialogComponent, {
+      data: {
+        prescription,
+        editMode: true,
+      }
+    });
+  }
+
+  public handleCreateButton(): void {
+    this.dialog.open(PrescriptionEditDialogComponent, {
+      data: {
+        editMode: false,
+      }
+    });
   }
 
 }

@@ -4,4 +4,6 @@ export interface Prescription {
   type: PrescriptionTypes;
   title: string;
   description: string;
+  dateFrom?: Date;
+  dateTo?: Date;
 }

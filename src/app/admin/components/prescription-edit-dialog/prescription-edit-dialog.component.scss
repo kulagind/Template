@@ -1,0 +1,19 @@
+.prescription-edit-dialog {
+  background: white;
+  width: 500px;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    margin-right: 16px;
+  }
+
+}

@@ -12,7 +12,7 @@
     <div class="patients-table__cell patients-table__header-cell">
       Телефон
     </div>
-    <div class="patients-table__cell patients-table__header-cell">
+    <div class="patients-table__cell patients-table__header-cell patients-table__cell-options">
     </div>
   </div>
   <div class="patients-table__row" *ngFor="let patient of patients">
@@ -28,9 +28,9 @@
     <div class="patients-table__cell">
       {{patient.phoneNumber}}
     </div>
-    <div class="patients-table__cell patients-table__cell-delete">
+    <div class="patients-table__cell patients-table__cell-options">
       <button mat-icon-button>
-        <mat-icon>delete</mat-icon>
+        <mat-icon>more_horiz</mat-icon>
       </button>
     </div>
   </div>

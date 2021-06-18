@@ -20,12 +20,16 @@
 
   &__cell {
     height: 100%;
-    flex: 1;
+    flex: 3;
     min-width: 0;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+
+    &-options {
+      flex: 1;
+    }
   }
 }

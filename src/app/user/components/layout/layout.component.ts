@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {NavigationEnd, Router} from "@angular/router";
+import {filter} from "rxjs/operators";
+import {PAGES} from "../../mocks/pages";
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  public title: string = 'Главная';
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    // @ts-ignore
+    this.title = PAGES[window.location.pathname.split('/').pop()] || 'Главная'
+    this.router.events.pipe(
+      filter(events => (events instanceof NavigationEnd))
+    ).subscribe(e => {
+      const url = (e as NavigationEnd).url.split('/').pop() || '';
+      // @ts-ignore
+      this.title = PAGES[url] || 'Главная';
+    });
   }
 
 }

@@ -20,6 +20,7 @@ const routes: Routes = [
       { path: 'chat', component: ChatComponent },
       { path: 'pressure', component: PressureComponent },
       { path: 'treatment', component: TreatmentComponent },
+      { path: '**', redirectTo: 'user' }
     ]
   }
 ];

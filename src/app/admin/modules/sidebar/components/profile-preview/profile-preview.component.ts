@@ -10,7 +10,7 @@ import { ProfilePreview } from '../../types/profile-preview.type';
 })
 export class ProfilePreviewComponent implements OnInit {
 
-  @Input() public profile: Readonly<Partial<ProfilePreview>>;
+  @Input() public profile!: Readonly<Partial<ProfilePreview>>;
 
   constructor() { }
 

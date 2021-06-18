@@ -8,7 +8,7 @@ import { RouterLinkActive } from '@angular/router';
 })
 export class SidebarItemComponent implements OnInit {
 
-  @Input() public value: string;
+  @Input() public value!: string;
 
   constructor(@Inject(RouterLinkActive) public activeRouter: RouterLinkActive) { }
 

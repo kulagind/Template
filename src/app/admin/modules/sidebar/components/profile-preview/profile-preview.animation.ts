@@ -3,7 +3,7 @@ import { DefaultAnimationOptions } from '../../../../types/default-animation-opt
 import { bezierCurve } from '../../../../functions/bezier-curve.function';
 
 export function firstScaleAppearance(
-  options: DefaultAnimationOptions
+  options: any
 ): AnimationTriggerMetadata {
 
   const { name, time } = options;

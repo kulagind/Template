@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router, RouterOutlet} from "@angular/router";
+import {filter, pluck} from "rxjs/operators";
 
 @Component({
   selector: 'app-pacient-dashboard-layout',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PacientDashboardLayoutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly routerOutlet: RouterOutlet, private readonly router: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.listenRouter();
+  }
+
+  public listenRouter(): void {
+    this.router.params
+      .pipe(
+        filter(value => !!value),
+        pluck('id')
+      )
+      .subscribe(value => {
+        console.log(value)
+      })
   }
 
 }

@@ -6,13 +6,15 @@ import {PacientDashboardLayoutComponent} from "./admin/components/pacient-dashbo
 import {LayoutComponent} from "./user/components/layout/layout.component";
 import {TreatmentComponent} from "./user/components/treatment/treatment.component";
 import {PressureComponent} from "./user/components/pressure/pressure.component";
-import {ChatComponent} from "./user/components/chat/chat.component";
+import {AdminChatLayoutComponent} from "./admin/components/admin-chat-layout/admin-chat-layout.component";
+import {ChatComponent} from "./shared/components/chat/chat.component";
 
 const routes: Routes = [
   {
     path: 'admin', component: AdminLayoutComponent, children: [
       { path: 'patients', component: PatientsListLayoutComponent },
       { path: 'patients/:id', component: PacientDashboardLayoutComponent },
+      { path: 'chat/:patientId', component: AdminChatLayoutComponent }
     ]
   },
   {

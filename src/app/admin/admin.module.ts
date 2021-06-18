@@ -17,6 +17,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { PrescriptionWidgetComponent } from './components/prescription-widget/prescription-widget.component';
 import { MatListModule } from '@angular/material/list';
 import { PatientPreviewComponent } from './components/patient-preview/patient-preview.component';
+import { AdminChatLayoutComponent } from './components/admin-chat-layout/admin-chat-layout.component';
+import {AppModule} from "../app.module";
+import {SharedModule} from "../shared/shared.module";
+import {ChatComponent} from "../shared/components/chat/chat.component";
 
 
 @NgModule({
@@ -31,6 +35,7 @@ import { PatientPreviewComponent } from './components/patient-preview/patient-pr
     PatientBarChartStatisticComponent,
     PrescriptionWidgetComponent,
     PatientPreviewComponent,
+    AdminChatLayoutComponent,
   ],
   exports: [
     PatientsTableComponent,
@@ -48,7 +53,8 @@ import { PatientPreviewComponent } from './components/patient-preview/patient-pr
     MatIconModule,
     MatRippleModule,
     MatListModule,
-    MatLineModule
+    MatLineModule,
+    SharedModule
   ],
   bootstrap: [ AdminLayoutComponent ],
 

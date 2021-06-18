@@ -9,18 +9,15 @@ import {Chart} from "chart.js";
 export class PatientChartStatisticComponent implements OnInit {
 
   private chart: any;
-  public isCreate= false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
-    if (!this.isCreate) {
-      this.init();
-    }
+    this.init();
   }
 
   private init(): void {
-
 
     const labels = [
       'January',
@@ -47,7 +44,7 @@ export class PatientChartStatisticComponent implements OnInit {
     };
 
     const canvas: any = document.getElementById('canvas');
-    // this.chart = new Chart(canvas, config);
+    this.chart = new Chart(canvas, config);
   }
 
 }

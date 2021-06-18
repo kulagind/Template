@@ -1,14 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AdminLayoutComponent} from './components/admin-layout/admin-layout.component';
-import {SidebarComponent} from "./modules/sidebar/components/sidebar/sidebar.component";
 import {SidebarModule} from "./modules/sidebar/sidebar.module";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {RouterModule} from "@angular/router";
-import { PacientDashboardLayoutComponent } from './components/pacient-dashboard-layout/pacient-dashboard-layout.component';
-import { PacientListLayoutComponent } from './components/pacient-list-layout/pacient-list-layout.component';
-import { PatientChartStatisticComponent } from './components/patient-chart-statistic/patient-chart-statistic.component';
-import { PatientBarChartStatisticComponent } from './components/patient-bar-chart-statistic/patient-bar-chart-statistic.component';
+import {PacientDashboardLayoutComponent} from './components/pacient-dashboard-layout/pacient-dashboard-layout.component';
+import {PacientListLayoutComponent} from './components/pacient-list-layout/pacient-list-layout.component';
+import {PatientChartStatisticComponent} from './components/patient-chart-statistic/patient-chart-statistic.component';
+import {PatientBarChartStatisticComponent} from './components/patient-bar-chart-statistic/patient-bar-chart-statistic.component';
 
 
 @NgModule({
@@ -23,7 +22,7 @@ import { PatientBarChartStatisticComponent } from './components/patient-bar-char
     CommonModule,
     SidebarModule,
     MatSidenavModule,
-    RouterModule
+    RouterModule,
   ],
   bootstrap: [ AdminLayoutComponent ],
 

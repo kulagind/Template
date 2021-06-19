@@ -32,6 +32,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { CalendarTimepickerComponent } from './user/components/calendar-timepicker/calendar-timepicker.component';
 import {MatTimepickerModule} from "mat-timepicker";
+import { TreatmentsListComponent } from './user/components/treatments-list/treatments-list.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -51,6 +52,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     UserRegisterComponent,
     CalendarLayoutComponent,
     CalendarTimepickerComponent,
+    TreatmentsListComponent,
   ],
   imports: [
     BrowserModule,

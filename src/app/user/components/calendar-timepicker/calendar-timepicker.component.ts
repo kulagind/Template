@@ -19,8 +19,4 @@ export class CalendarTimepickerComponent implements OnInit {
     this.dialogRef.close($event);
 
   }
-
-  public onClose(): void {
-    // set the closeMessage property here
-  }
 }

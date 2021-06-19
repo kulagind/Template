@@ -1,10 +1,17 @@
 <div class="container">
-  <div class="header">Header</div>
+  <div class="header">
+    <a *ngIf="title !== 'Главная'" class="header__link" routerLink="/user">
+      <mat-icon class="example-tab-icon">arrow_back_ios_new</mat-icon>
+    </a>
+    <div class="header__title">
+      {{title}}
+    </div>
+  </div>
 
-  <div class="content">
+  <div class="content" [ngClass]="{'chat': title === CHAT}">
     <router-outlet></router-outlet>
   </div>
 
-  <app-navbar></app-navbar>
+  <app-navbar *ngIf="title !== CHAT"></app-navbar>
 </div>
 

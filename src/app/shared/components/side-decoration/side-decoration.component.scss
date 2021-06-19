@@ -1,0 +1,49 @@
+.side-decoration {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  background: no-repeat url("../../../../../../../../../Downloads/front-dev/front-dev/src/assets/img/side-dec-background.png");
+  background-size: 100% 100%;
+  user-select: none;
+}
+
+.side-decoration__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-decoration__content-footer {
+  margin-top: auto;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 16px;
+}
+
+.side-decoration__content-title {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 72px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.side-decoration__content-text {
+  font-size: 14px;
+  line-height: 20px;
+  width: 53%;
+  text-align: center;
+}
+
+.side-decoration__top-padding {
+  width: 100%;
+  height: 24.2%;
+}
+
+.side-decoration__bottom-padding {
+  height: 4%;
+}

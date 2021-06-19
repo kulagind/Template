@@ -2,7 +2,7 @@
   <div class="img"></div>
 
   <app-profile-preview
-    [profile]="{ name: 'John Doe', email: 'mail@gmail.com' }"
+    [profile]="{ name: patient?.firstName, email: patient?.lastName }"
     class="preview-profile">
   </app-profile-preview>
 

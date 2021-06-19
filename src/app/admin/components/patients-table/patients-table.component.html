@@ -15,7 +15,7 @@
     <div class="patients-table__cell patients-table__header-cell patients-table__cell-options">
     </div>
   </div>
-  <div class="patients-table__row" *ngFor="let patient of patients">
+  <div class="patients-table__row" *ngFor="let patient of patients" (click)="handlePatientSelect(patient)">
     <div class="patients-table__cell">
       {{patient.firstName}}
     </div>
@@ -30,7 +30,7 @@
     </div>
     <div class="patients-table__cell patients-table__cell-options">
       <button mat-icon-button>
-        <mat-icon>more_horiz</mat-icon>
+        <mat-icon>more_vert</mat-icon>
       </button>
     </div>
   </div>

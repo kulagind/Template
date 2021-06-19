@@ -4,6 +4,14 @@ import {CommonModule} from "@angular/common";
 import {ChatComponent} from "./components/chat/chat.component";
 import {MessageComponent} from "./components/chat/message/message.component";
 import {AuthService} from "./services/auth.service";
+import {MatIconModule} from "@angular/material/icon";
+import {OutlinedInputComponent} from "./components/outlined-input/outlined-input.component";
+import {SideDecorationComponent} from "./components/side-decoration/side-decoration.component";
+import {BaseHeaderComponent} from "./components/base-header/base-header.component";
+import {LoginComponent} from "./components/login/login.component";
+import {LoginFormComponent} from "./components/login-form/login-form.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatButtonModule} from "@angular/material/button";
 
 export function initFactory(authService: AuthService): () => Promise<any> {
   return (): Promise<any> => {
@@ -12,10 +20,22 @@ export function initFactory(authService: AuthService): () => Promise<any> {
 }
 
 @NgModule({
-  declarations: [ChatComponent, MessageComponent],
+  declarations: [
+    ChatComponent,
+    MessageComponent,
+    OutlinedInputComponent,
+    SideDecorationComponent,
+    BaseHeaderComponent,
+    LoginComponent,
+    LoginFormComponent
+  ],
   imports: [
     BrowserModule,
     CommonModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatButtonModule
   ],
   providers: [
     {
@@ -26,7 +46,8 @@ export function initFactory(authService: AuthService): () => Promise<any> {
     }
   ],
   exports: [
-    ChatComponent
+    ChatComponent,
+    OutlinedInputComponent
   ]
 })
 export class SharedModule {

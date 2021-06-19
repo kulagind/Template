@@ -1,43 +1,19 @@
 <div class="list">
-  <div class="treatment-card">
+  <div class="treatment-card" *ngFor="let card of medicine">
     <div class="img-wrapper"></div>
     <div class="info">
       <div>
-        <h3 class="info-title">Lorem Ipsum</h3>
+        <h3 class="info-title">{{ card }}</h3>
         <p class="info-description">Lorem Ipsum opus</p>
       </div>
 
 
       <div class="controls">
-        <button mat-stroked-button color="primary">Купить</button>
-      </div>
-    </div>
-  </div>
-  <div class="treatment-card">
-    <div class="img-wrapper"></div>
-    <div class="info">
-      <div>
-        <h3 class="info-title">Lorem Ipsum</h3>
-        <p class="info-description">Lorem Ipsum opus</p>
-      </div>
-
-
-      <div class="controls">
-        <button mat-stroked-button color="primary">Купить</button>
-      </div>
-    </div>
-  </div>
-  <div class="treatment-card">
-    <div class="img-wrapper"></div>
-    <div class="info">
-      <div>
-        <h3 class="info-title">Lorem Ipsum</h3>
-        <p class="info-description">Lorem Ipsum opus</p>
-      </div>
-
-
-      <div class="controls">
-        <button mat-stroked-button color="primary">Купить</button>
+        <a
+          target="_blank"
+          href="https://market.yandex.ru/search?text=%D0%BB%D0%B5%D0%BA%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B0&cvredirect=2&suggest=2&cpa=0&onstock=0&local-offers-first=0"
+          mat-stroked-button
+          color="primary">Купить</a>
       </div>
     </div>
   </div>

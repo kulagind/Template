@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MedicineHttpService} from "../../services/medicine-http.service";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-treatments-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TreatmentsListComponent implements OnInit {
 
-  constructor() { }
+  public medicine: any[];
+
+  constructor(
+    private readonly userService: UserService,
+    private readonly medicineHttpService: MedicineHttpService) { }
 
   public ngOnInit(): void {
+    this.medicineHttpService
+      .getMedicine(
+        this.userService.token
+      )
+      .subscribe(value => this.medicine = value);
   }
 
 }

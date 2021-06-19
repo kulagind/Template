@@ -34,10 +34,10 @@
 
   </form>
   <div class="prescription-edit-dialog__controls">
-    <button class="prescription-edit-dialog__button" (click)="sendMedicine()" mat-raised-button>
+    <button class="prescription-edit-dialog__button" mat-raised-button (click)="handleSave()">
       Сохранить
     </button>
-    <button *ngIf="editMode" class="prescription-edit-dialog__button" mat-raised-button>
+    <button *ngIf="editMode" class="prescription-edit-dialog__button" mat-raised-button (click)="handleClose()">
       Удалить
     </button>
   </div>

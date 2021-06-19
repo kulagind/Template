@@ -74,4 +74,12 @@ export class PressureComponent implements OnInit {
     return this.actions.filter(action => action.toLowerCase().includes(filterValue));
   }
 
+  async initBluetooth() {
+    // @ts-ignore
+    const device = await navigator.bluetooth.requestDevice({
+      filters: [{
+        services: [0x1800]
+      }]
+    });
+  }
 }

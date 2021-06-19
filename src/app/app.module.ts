@@ -34,6 +34,7 @@ import { CalendarTimepickerComponent } from './user/components/calendar-timepick
 import {MatTimepickerModule} from "mat-timepicker";
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { TreatmentsListComponent } from './user/components/treatments-list/treatments-list.component';
+import { MatOptionModule } from '@angular/material/core';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,

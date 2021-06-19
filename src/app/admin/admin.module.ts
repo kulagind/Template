@@ -77,7 +77,7 @@ import {PrivatePatientTableLayoutComponent} from "./components/private-patient-t
     MatInputModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   bootstrap: [ AdminLayoutComponent ],
 

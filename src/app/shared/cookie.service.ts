@@ -13,7 +13,7 @@ export class CookieService {
   }
 
   setAuth(value: string): void {
-    Cookie.set('id_token', value, 0.0138889);
+    Cookie.set('id_token', value, 1);
   }
 
   deleteAuth(): void {

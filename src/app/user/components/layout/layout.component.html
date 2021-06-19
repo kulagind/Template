@@ -1,11 +1,12 @@
 <div class="container">
   <div class="header">
-    <a *ngIf="title !== 'Главная'" class="header__link" routerLink="/user">
+    <a *ngIf="title !== 'Главная'" mat-icon-button class="header__link" routerLink="/user">
       <mat-icon class="example-tab-icon">arrow_back_ios_new</mat-icon>
     </a>
-    <div class="header__title">
+    <div class="header__title" (click)="handleClick()">
       {{title}}
     </div>
+
   </div>
 
   <div class="content" [ngClass]="{'chat': title === CHAT}">

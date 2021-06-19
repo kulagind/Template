@@ -6,4 +6,5 @@ export interface Prescription {
   description: string;
   dateFrom?: Date;
   dateTo?: Date;
+  id: string;
 }

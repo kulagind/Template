@@ -11,6 +11,18 @@
     <mat-label>Pulse</mat-label>
     <input formControlName="pulse" autocomplete="off" matInput>
   </mat-form-field>
+  <mat-form-field class="form-item" appearance="outline">
+    <mat-label>Деятельность</mat-label>
+    <input formControlName="action" autocomplete="off" matInput [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" >
+      <mat-option *ngFor="let action of filteredActions | async" [value]="action" >
+        {{action}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
 
-  <button mat-stroked-button color="primary" (click)="submit()">Сохранить</button>
+  <div class="group group_banner group_medium">
+
+  </div>
+
 </div>

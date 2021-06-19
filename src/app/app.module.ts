@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +25,21 @@ import { environment } from '../environments/environment';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ParamInterceptor } from './shared/services/auth.interceptor';
+import { CalendarLayoutComponent } from './user/components/calendar-layout/calendar-layout.component';
+import {FullCalendarModule} from "@fullcalendar/angular";
+
+import dayGridPlugin from "@fullcalendar/daygrid";
+import interactionPlugin from "@fullcalendar/interaction";
+import { CalendarTimepickerComponent } from './user/components/calendar-timepicker/calendar-timepicker.component';
+import {MatTimepickerModule} from "mat-timepicker";
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { TreatmentsListComponent } from './user/components/treatments-list/treatments-list.component';
+import { MatOptionModule } from '@angular/material/core';
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin,
+]);
 
 
 @NgModule({
@@ -36,6 +52,9 @@ import { ParamInterceptor } from './shared/services/auth.interceptor';
     PressureFormComponent,
     UserLoginComponent,
     UserRegisterComponent,
+    CalendarLayoutComponent,
+    CalendarTimepickerComponent,
+    TreatmentsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +74,11 @@ import { ParamInterceptor } from './shared/services/auth.interceptor';
     }),
     HttpClientModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FullCalendarModule,
+    MatTimepickerModule,
+    MatAutocompleteModule,
+    MatOptionModule
   ],
   providers: [
     {

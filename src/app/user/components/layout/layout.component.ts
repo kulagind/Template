@@ -5,6 +5,7 @@ import {CHAT_PAGE, PAGES} from "../../mocks/pages";
 import { SwPush } from '@angular/service-worker';
 import { environment } from '../../../../environments/environment';
 import { PushSubscriptionService } from '../../services/push-subscription.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-layout',
@@ -20,6 +21,7 @@ export class LayoutComponent implements OnInit {
     private router: Router,
     private swPush: SwPush,
     private pushSubService: PushSubscriptionService,
+    private http: HttpClient,
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +38,10 @@ export class LayoutComponent implements OnInit {
       // @ts-ignore
       this.title = PAGES[url] || 'Главная';
     });
+  }
+
+  handleClick(): void {
+    this.http.get('/api/oauth2/').subscribe();
   }
 
 }

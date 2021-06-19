@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Prescription } from '../../types/prescription.type';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-prescription-edit-dialog',
@@ -18,6 +18,7 @@ export class PrescriptionEditDialogComponent implements OnInit {
     private formBuilder: FormBuilder,
     @Inject(MAT_DIALOG_DATA)
     private data: any,
+    private dialogRef: MatDialogRef<PrescriptionEditDialogComponent>,
   ) {
     this.prescription = this.data.prescription;
     this.formGroup = this.formBuilder.group({
@@ -31,6 +32,14 @@ export class PrescriptionEditDialogComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+  }
+
+  public handleSave(): void {
+    this.dialogRef.close(this.formGroup.value);
+  }
+
+  public handleClose(): void {
+    this.dialogRef.close();
   }
 
 }

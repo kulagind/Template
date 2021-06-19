@@ -1,3 +1,5 @@
+@import "src/styles";
+
 .container {
   height: 100%;
   width: 100%;
@@ -26,8 +28,8 @@
 
 .header__link {
   display: flex;
-  width: max-content;
-  height: 100%;
+  width: 30px;
+  height: 30px;
   color: inherit;
   justify-content: center;
   align-items: center;
@@ -35,5 +37,13 @@
 }
 
 .header__title {
+  @include subtitle_1($on-light-surface);
   margin-left: 20px;
+}
+
+.example-tab-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 }

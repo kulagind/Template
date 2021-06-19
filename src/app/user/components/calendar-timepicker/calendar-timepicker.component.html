@@ -1,0 +1,16 @@
+<div class="timepicker">
+  <mat-form-field appearance="fill">
+    <mat-label>TIMEPICKER</mat-label>
+
+    <!-- The timepicker input -->
+    <input matTimepicker #t="matTimepicker"
+           [strict]="false" id="timepicker-example" mode="24h"
+           placeholder="Выберите время напоминания..." name="time"
+           (timeChange)="timeChangeHandler($event)">
+
+    <!-- An icon for the timepicker input that will open the timepicker dialog when clicked -->
+    <mat-icon matSuffix (click)="t.showDialog()">access_time</mat-icon>
+
+    <!-- Error that will be shown when the input date is invalid -->
+  </mat-form-field>
+</div>

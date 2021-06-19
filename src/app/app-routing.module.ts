@@ -16,6 +16,7 @@ import {UserRegisterComponent} from "./user/components/user-register/user-regist
 import {AdminGuard} from "./admin/services/admin.guard";
 import {UserGuard} from "./user/services/user.guard";
 import {PrivatePatientTableLayoutComponent} from "./admin/components/private-patient-table-layout/private-patient-table-layout.component";
+import {CalendarLayoutComponent} from "./user/components/calendar-layout/calendar-layout.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login-user'  },
@@ -36,6 +37,7 @@ const routes: Routes = [
       { path: 'chat', component: ChatComponent, canActivate: [ UserGuard ] },
       { path: 'pressure', component: PressureComponent, canActivate: [ UserGuard ] },
       { path: 'treatment', component: TreatmentComponent, canActivate: [ UserGuard ] },
+      { path: 'calendar', component: CalendarLayoutComponent, canActivate: [ UserGuard ] },
       { path: '**', redirectTo: 'user' }
     ]
   }

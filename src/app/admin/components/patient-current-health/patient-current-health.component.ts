@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-patient-current-health',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientCurrentHealthComponent implements OnInit {
 
+  @Input()
+  public measurements: any
+
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    console.log(this.measurements)
   }
 
 }

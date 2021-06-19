@@ -1,8 +1,8 @@
 <div class="dashboard">
   <div class="widgets" @scale>
-    <app-patient-chart-statistic class="dashboard-widget"></app-patient-chart-statistic>
-    <app-patient-preview class="dashboard-widget"></app-patient-preview>
-    <app-patient-current-health class="dashboard-widget"></app-patient-current-health>
+    <app-patient-chart-statistic [measurements]="measurement$ | async" class="dashboard-widget"></app-patient-chart-statistic>
+    <app-patient-preview [patient]="patient$ | async" class="dashboard-widget"></app-patient-preview>
+    <app-patient-current-health [measurements]="measurement$ | async" class="dashboard-widget"></app-patient-current-health>
     <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>
     <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>
     <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>

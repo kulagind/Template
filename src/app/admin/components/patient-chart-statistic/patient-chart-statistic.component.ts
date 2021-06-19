@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, Renderer2} from '@angular/core';
+import {AfterViewInit, Component, Input, OnChanges, OnInit, Renderer2, SimpleChanges} from '@angular/core';
 import {Chart, ChartConfiguration} from "chart.js";
 import {Gradient} from "../../classes/gradient.class";
 
@@ -8,7 +8,10 @@ import {Gradient} from "../../classes/gradient.class";
   templateUrl: './patient-chart-statistic.component.html',
   styleUrls: ['./patient-chart-statistic.component.scss']
 })
-export class PatientChartStatisticComponent implements OnInit, AfterViewInit {
+export class PatientChartStatisticComponent implements OnInit, AfterViewInit, OnChanges {
+
+  @Input()
+  public measurements: any[];
 
   private chart: any;
   private readonly gradient: Gradient;
@@ -20,35 +23,36 @@ export class PatientChartStatisticComponent implements OnInit, AfterViewInit {
   public ngOnInit(): void {
   }
 
+  public ngOnChanges(changes: SimpleChanges): void {
+    this.init()
+  }
+
   public ngAfterViewInit(): void {
-    this.init();
+    setTimeout(() => this.init(),100)
+  }
+
+  private getData(): number[] {
+    return this.measurements
+      .map(value => {
+        return value.lowerPoint
+      })
   }
 
   private init(): void {
 
-    const labels = [
-      '',
-      '',
-      '',
-      '',
-      '',
-      '',
-    ];
+    const values = this.getData();
+
+    const labels = Array(values.length).fill('')
+    console.log(labels)
     const data = {
       labels: labels,
       datasets: [
         {
-          label: 'My First dataset',
+          label: 'Давление',
           backgroundColor: this.gradient.getGradient(),
           borderColor: 'rgba(255, 255, 255, 0)',
-          data: [0, 10, 5, 2, 20, 30, 45],
+          data: this.getData(),
         },
-        {
-          label: 'My First dataset',
-          backgroundColor: this.gradient.getGradient(),
-          borderColor: 'rgba(255, 255, 255, 0)',
-          data: [5, 8, 23, 12, 20, 30, 55],
-        }
       ]
     };
 

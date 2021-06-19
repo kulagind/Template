@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router, RouterOutlet} from "@angular/router";
-import {filter, pluck, switchMap} from "rxjs/operators";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {filter, flatMap, pluck, switchMap} from "rxjs/operators";
 import {PatientsHttpService} from "../../services/patients-http.service";
 import {firstScaleAppearance} from "./pacient-dashboard-layout.animation";
+import {Observable} from "rxjs";
+import {Patient} from "../../types/patient.type";
 
 @Component({
   selector: 'app-pacient-dashboard-layout',
@@ -19,6 +21,9 @@ import {firstScaleAppearance} from "./pacient-dashboard-layout.animation";
 })
 export class PacientDashboardLayoutComponent implements OnInit {
 
+  public patient$: Observable<Patient | any>;
+  public measurement$: Observable<any>;
+
   constructor(private readonly router: ActivatedRoute, private readonly patientHttpService: PatientsHttpService) { }
 
   public ngOnInit(): void {
@@ -26,7 +31,7 @@ export class PacientDashboardLayoutComponent implements OnInit {
   }
 
   public listenRouter(): void {
-    this.router.params
+    this.measurement$ = this.router.params
       .pipe(
         filter(value => !!value),
         pluck('id'),
@@ -34,9 +39,20 @@ export class PacientDashboardLayoutComponent implements OnInit {
           return this.patientHttpService.getMeasurements(value);
         })
       )
-      .subscribe(value => {
-        console.log(value)
-      })
+
+    this.patient$ = this.router.params
+      .pipe(
+        filter(value => !!value),
+        pluck('id'),
+        switchMap(value => {
+          return this.patientHttpService.getPatients()
+            .pipe(
+              flatMap(value => value),
+              // @ts-ignore
+              filter(patient => patient.uid.toString() === value)
+            );
+        })
+      )
   }
 
 }

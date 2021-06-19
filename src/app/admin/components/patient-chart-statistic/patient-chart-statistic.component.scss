@@ -6,9 +6,11 @@
   height: 280px;
   overflow: hidden;
   &-info {
+    position: relative;
     height: 80px;
     padding-left: 45px;
     padding-top: 45px;
+    z-index: 10;
     &-title {
       @include headline_4($on-light-surface)
     }
@@ -20,7 +22,8 @@
 }
 
 .canvas {
+  z-index: 3;
   position: absolute;
   top: 30px;
-  left: -30px;
+  left: -40px;
 }

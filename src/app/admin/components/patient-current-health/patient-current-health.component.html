@@ -1,7 +1,7 @@
 <div class="current-health">
 
-  <div class="info">
-    <h2 class="info-title">98</h2>
+  <div class="info" *ngIf="measurements">
+    <h2 class="info-title">{{ measurements[measurements.length - 1].lowerPoint }}</h2>
     <p class="info-description">Текущий пульс пациента</p>
   </div>
 

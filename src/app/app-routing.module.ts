@@ -8,13 +8,16 @@ import {TreatmentComponent} from "./user/components/treatment/treatment.componen
 import {PressureComponent} from "./user/components/pressure/pressure.component";
 import {AdminChatLayoutComponent} from "./admin/components/admin-chat-layout/admin-chat-layout.component";
 import {ChatComponent} from "./shared/components/chat/chat.component";
+import {LoginFormComponent} from "./shared/components/login-form/login-form.component";
+import {LoginComponent} from "./shared/components/login/login.component";
 
 const routes: Routes = [
+  { path: 'auth', component: LoginComponent },
   {
     path: 'admin', component: AdminLayoutComponent, children: [
       { path: 'patients', component: PatientsListLayoutComponent },
       { path: 'patients/:id', component: PacientDashboardLayoutComponent },
-      { path: 'chat/:patientId', component: AdminChatLayoutComponent }
+      { path: 'chat/:patientId', component: AdminChatLayoutComponent },
     ]
   },
   {

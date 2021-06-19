@@ -16,6 +16,10 @@ export class PatientsHttpService {
     return this.http.get<any>(this.api)
   }
 
+  public getPatient(id: string): Observable<any> {
+    return this.http.get<any>(`${this.api}${id}`);
+  }
+
   public getMeasurements(id: string): Observable<any> {
     return this.http.get(`api/measurements/${id}`);
   }

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PushSubscriptionService {
 
-  private api = '/api/subscription';
+  private api = '/api2/subscription';
 
   constructor(
     private http: HttpClient,

@@ -30,6 +30,8 @@ import {FullCalendarModule} from "@fullcalendar/angular";
 
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatOptionModule } from '@angular/material/core';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -68,7 +70,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    FullCalendarModule
+    FullCalendarModule,
+    MatAutocompleteModule,
+    MatOptionModule
   ],
   providers: [
     {

@@ -1,0 +1,78 @@
+.patient-list-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+
+  &__table {
+    width: 90%;
+    height: 50%;
+    margin-bottom: 15px;
+  }
+
+  &__controls {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__paginator {
+    width: 200px;
+  }
+}
+
+.search {
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  margin-bottom: 55px;
+  padding-top: 45px;
+}
+@import "src/styles";
+.patients-table {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+
+  &__header-cell {
+    color: rgba(0, 0, 0, 0.6);
+    user-select: none;
+    cursor: default;
+  }
+
+  &__row {
+    display: flex;
+    flex: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0 20px;
+    height: 80px;
+    min-height: 80px;
+    transition: 300ms ease-in-out;
+    &:hover {
+      background: #E9F5F2;
+      color: #1F927A;
+      border-radius: 10px;
+    }
+  }
+
+  &__cell {
+    height: 100%;
+    flex: 3;
+    min-width: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &-options {
+      flex: 1;
+      color: $on-light-surface-medium;
+    }
+  }
+}

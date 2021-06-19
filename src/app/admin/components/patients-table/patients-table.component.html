@@ -29,9 +29,7 @@
       {{patient.phoneNumber}}
     </div>
     <div class="patients-table__cell patients-table__cell-options">
-      <button mat-icon-button>
-        <mat-icon>more_vert</mat-icon>
-      </button>
+      <button mat-button color="primary" (click)="$event.stopPropagation(); handlePatientAdd(patient.uid)"> Добавить </button>
     </div>
   </div>
 </div>

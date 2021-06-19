@@ -1,1 +1,50 @@
-<p>private-patient-table-layout works!</p>
+<div class="patient-list-layout">
+
+  <app-applicant-list-search class="search"></app-applicant-list-search>
+
+  <div class="patient-list-layout__table">
+    <div class="patients-table">
+      <div class="patients-table__row patients-table__header-row">
+        <div class="patients-table__cell patients-table__header-cell">
+          Имя
+        </div>
+        <div class="patients-table__cell patients-table__header-cell">
+          Фамилия
+        </div>
+        <div class="patients-table__cell patients-table__header-cell">
+          Возраст
+        </div>
+        <div class="patients-table__cell patients-table__header-cell">
+          Телефон
+        </div>
+        <div class="patients-table__cell patients-table__header-cell patients-table__cell-options">
+        </div>
+      </div>
+      <div class="patients-table__row" *ngFor="let patient of patients" (click)="handlePatientSelect(patient)">
+        <div class="patients-table__cell">
+          {{patient.firstName}}
+        </div>
+        <div class="patients-table__cell">
+          {{patient.lastName}}
+        </div>
+        <div class="patients-table__cell">
+          {{patient.age}}
+        </div>
+        <div class="patients-table__cell">
+          {{patient.phoneNumber}}
+        </div>
+        <div class="patients-table__cell patients-table__cell-options">
+          <button mat-button color="primary" (click)="$event.stopPropagation(); handleDeleteButton(patient.uid)"> Удалить </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  <div class="patient-list-layout__controls">-->
+  <!--    <div class="patient-list-layout__paginator">-->
+  <!--      <app-patients-list-paginator></app-patients-list-paginator>-->
+  <!--    </div>-->
+  <!--    <button mat-raised-button class="patient-list-layout__button">-->
+  <!--      Добавить-->
+  <!--    </button>-->
+  <!--  </div>-->
+</div>

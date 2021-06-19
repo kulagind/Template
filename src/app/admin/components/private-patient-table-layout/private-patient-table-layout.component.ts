@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {PrivatePatientsHttpService} from "../../services/private-patients-http.service";
+import {Patient} from "../../types/patient.type";
+import {Router} from "@angular/router";
+import {switchMap} from "rxjs/operators";
 
 @Component({
   selector: 'app-private-patient-table-layout',
@@ -7,9 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivatePatientTableLayoutComponent implements OnInit {
 
-  constructor() { }
+  public patients: Patient[];
 
-  ngOnInit(): void {
+  constructor(private readonly privatePatientHttpService: PrivatePatientsHttpService, private readonly router: Router) { }
+
+  public ngOnInit(): void {
+    this.privatePatientHttpService.getPrivatePatients().subscribe(value => {
+      this.patients = value;
+    })
+  }
+
+  public handlePatientSelect(patient: Patient): void {
+    this.router.navigate([`admin/patients/${patient.uid}`]);
+  }
+
+  public handleDeleteButton(id: string): void {
+    this.privatePatientHttpService
+      .deletePrivatePatient(id)
+      .pipe(
+        switchMap((_: any) => {
+          return this.privatePatientHttpService.getPrivatePatients()
+        })
+      )
+      .subscribe(patients => this.patients = patients);
   }
 
 }

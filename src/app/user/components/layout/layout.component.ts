@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs/operators";
 import {CHAT_PAGE, PAGES} from "../../mocks/pages";
+import { SwPush } from '@angular/service-worker';
+import { environment } from '../../../../environments/environment';
+import { PushSubscriptionService } from '../../services/push-subscription.service';
 
 @Component({
   selector: 'app-layout',
@@ -14,10 +17,16 @@ export class LayoutComponent implements OnInit {
   public readonly CHAT = CHAT_PAGE;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private swPush: SwPush,
+    private pushSubService: PushSubscriptionService,
   ) { }
 
   ngOnInit(): void {
+    this.swPush.requestSubscription({
+      serverPublicKey: environment.vapidPublicKey,
+    }).then(sub => this.pushSubService.createSub(sub).subscribe());
+
     // @ts-ignore
     this.title = PAGES[window.location.pathname.split('/').pop()] || 'Главная';
     this.router.events.pipe(

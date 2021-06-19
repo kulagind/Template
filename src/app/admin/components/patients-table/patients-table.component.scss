@@ -16,10 +16,16 @@
   &__row {
     display: flex;
     flex: 1;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 0 20px;
     height: 80px;
     min-height: 80px;
+    transition: 300ms ease-in-out;
+    &:hover {
+      background: #E9F5F2;
+      color: #1F927A;
+      border-radius: 10px;
+    }
   }
 
   &__cell {

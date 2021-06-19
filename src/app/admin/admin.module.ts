@@ -28,6 +28,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {PatientCurrentHealthComponent} from './components/patient-current-health/patient-current-health.component';
 import {ApplicantListSearchComponent} from "./components/applicant-list-search/applicant-list-search.component";
 import { MiBandStepWidgetComponent } from './components/mi-band-step-widget/mi-band-step-widget.component';
+import { PrivatePatientTableComponent } from './components/private-patient-table/private-patient-table.component';
+import {PrivatePatientTableLayoutComponent} from "./components/private-patient-table-layout/private-patient-table-layout.component";
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { MiBandStepWidgetComponent } from './components/mi-band-step-widget/mi-b
     PatientCurrentHealthComponent,
     ApplicantListSearchComponent,
     MiBandStepWidgetComponent,
+    PrivatePatientTableLayoutComponent,
+    PrivatePatientTableComponent,
   ],
   exports: [
     PatientsTableComponent,

@@ -15,6 +15,7 @@ import {UserLoginComponent} from "./user/components/user-login/user-login.compon
 import {UserRegisterComponent} from "./user/components/user-register/user-register.component";
 import {AdminGuard} from "./admin/services/admin.guard";
 import {UserGuard} from "./user/services/user.guard";
+import {PrivatePatientTableLayoutComponent} from "./admin/components/private-patient-table-layout/private-patient-table-layout.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login-user'  },
@@ -25,6 +26,7 @@ const routes: Routes = [
   {
     path: 'admin', component: AdminLayoutComponent, canActivate: [AdminGuard],  children: [
       { path: 'patients', component: PatientsListLayoutComponent, canActivate: [ AdminGuard ] },
+      { path: 'private-patients', component: PrivatePatientTableLayoutComponent, canActivate: [ AdminGuard ] },
       { path: 'patients/:id', component: PacientDashboardLayoutComponent, canActivate: [ AdminGuard ] },
       { path: 'chat/:patientId', component: AdminChatLayoutComponent, canActivate: [ AdminGuard ] },
     ]

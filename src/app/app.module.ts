@@ -30,8 +30,10 @@ import {FullCalendarModule} from "@fullcalendar/angular";
 
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import { CalendarTimepickerComponent } from './user/components/calendar-timepicker/calendar-timepicker.component';
+import {MatTimepickerModule} from "mat-timepicker";
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatOptionModule } from '@angular/material/core';
+import { TreatmentsListComponent } from './user/components/treatments-list/treatments-list.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -50,6 +52,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     UserLoginComponent,
     UserRegisterComponent,
     CalendarLayoutComponent,
+    CalendarTimepickerComponent,
+    TreatmentsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +75,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatFormFieldModule,
     MatInputModule,
     FullCalendarModule,
+    MatTimepickerModule,
     MatAutocompleteModule,
     MatOptionModule
   ],

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CalendarOptions} from "@fullcalendar/angular";
+import {MatDialog} from "@angular/material/dialog";
+import {CalendarTimepickerComponent} from "../calendar-timepicker/calendar-timepicker.component";
 
 @Component({
   selector: 'app-calendar-layout',
@@ -18,13 +20,18 @@ export class CalendarLayoutComponent implements OnInit {
     ]
   };
 
-  handleDateClick(arg) {
-    alert('date click! ' + arg.dateStr)
+  constructor(private readonly dialog: MatDialog) { }
+
+  public ngOnInit(): void {
+
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public handleDateClick(arg): void {
+    this.dialog.open(CalendarTimepickerComponent)
+      .afterClosed()
+      .subscribe(value => {
+        console.log(value)
+      })
   }
 
 }

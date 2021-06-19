@@ -30,6 +30,7 @@ import {ApplicantListSearchComponent} from "./components/applicant-list-search/a
 import { MiBandStepWidgetComponent } from './components/mi-band-step-widget/mi-band-step-widget.component';
 import { PrivatePatientTableComponent } from './components/private-patient-table/private-patient-table.component';
 import {PrivatePatientTableLayoutComponent} from "./components/private-patient-table-layout/private-patient-table-layout.component";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import {PrivatePatientTableLayoutComponent} from "./components/private-patient-t
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTooltipModule,
   ],
   bootstrap: [ AdminLayoutComponent ],
 

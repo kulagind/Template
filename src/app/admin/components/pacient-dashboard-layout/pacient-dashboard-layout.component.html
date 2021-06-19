@@ -4,13 +4,26 @@
     <app-patient-preview [patient]="patient$ | async" class="dashboard-widget"></app-patient-preview>
     <app-patient-current-health [measurements]="measurement$ | async" class="dashboard-widget"></app-patient-current-health>
     <app-mi-band-step-widget class="dashboard-widget"></app-mi-band-step-widget>
-    <div class="dashboard-widget">
+    <div class="dashboard-widget-mi-band" matTooltip="У пациента отстутствует смарт-браслет">
+
+      <div class="head">
+
+        <div class="text">
+          <h3 class="text-title">Google Fit</h3>
+          <img src="assets/icons/googlefit.png" class="text-logo">
+        </div>
+
+      </div>
+
+      <div class="blur"></div>
+
+
 
     </div>
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
     <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
-    <app-prescription-widget class="dashboard-widget dashboard-widget_medium"></app-prescription-widget>
+<!--    <app-prescription-widget class="dashboard-widget dashboard-widget_medium"></app-prescription-widget>-->
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
 <!--    <app-patient-chart-statistic class="dashboard-widget"></app-patient-chart-statistic>-->

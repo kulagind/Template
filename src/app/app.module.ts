@@ -16,6 +16,9 @@ import {NavbarComponent} from './user/components/navbar/navbar.component';
 
 import {SharedModule} from "./shared/shared.module";
 import {HttpClientModule} from "@angular/common/http";
+import { PressureFormComponent } from './user/components/pressure-form/pressure-form.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import {HttpClientModule} from "@angular/common/http";
     TreatmentComponent,
     PressureComponent,
     NavbarComponent,
+    PressureFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import {HttpClientModule} from "@angular/common/http";
     MatTabsModule,
     MatIconModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   bootstrap: [AppComponent]
 })

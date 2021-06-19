@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {PressureComponent} from "../pressure/pressure.component";
+import {PressureFormComponent} from "../pressure-form/pressure-form.component";
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly dialog: MatDialog) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+  }
+
+  public handleAddPressureButtonClick(): void {
+    this.dialog.open(PressureFormComponent)
+
   }
 
 }

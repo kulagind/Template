@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import {Router} from "@angular/router";
+import {AdminAuthHttpService} from "../../../admin/services/admin-auth-http.service";
+import {AdminService} from "../../../admin/services/admin.service";
 
 @Component({
   selector: 'app-login-form',
@@ -10,7 +13,11 @@ export class LoginFormComponent implements OnInit {
 
   public formGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private readonly router: Router,
+    private readonly adminAuthHttpService: AdminAuthHttpService,
+    private readonly adminService: AdminService,
+    private formBuilder: FormBuilder) {
     this.formGroup = formBuilder.group({
       login: '',
       password: '',
@@ -20,7 +27,17 @@ export class LoginFormComponent implements OnInit {
   public ngOnInit(): void {
   }
 
-  public handleLoginButton(): void { }
+  public handleLoginButton(): void {
+    this.adminAuthHttpService
+      .login(this.formGroup.value)
+      .subscribe({
+        next: (value) => {
+          this.adminService.token = value;
+          this.router.navigate(['/admin/patients'])
+        },
+        error: () => window.alert('Неверный логин или паоль')
+      })
+  }
 
   public handleExitButton(): void { }
 

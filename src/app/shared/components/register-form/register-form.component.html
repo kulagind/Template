@@ -1,0 +1,28 @@
+<div class="login-form">
+  <h3 class="login-form__title">
+    Регистрация
+  </h3>
+  <div class="login-form__inputs">
+    <form [formGroup]="formGroup">
+      <div class="login-form__input">
+        <app-outlined-input formControlName="firstName" [type]="'text'" [placeholder]="'Имя'"></app-outlined-input>
+      </div>
+      <div class="login-form__input">
+        <app-outlined-input formControlName="lastName" [type]="'text'" [placeholder]="'Фамилия'"></app-outlined-input>
+      </div>
+      <div class="login-form__input">
+        <app-outlined-input formControlName="department" [type]="'text'" [placeholder]="'Мед. Учереждение'"></app-outlined-input>
+      </div>
+      <div class="login-form__input">
+        <app-outlined-input formControlName="login" [type]="'text'" [placeholder]="'Логин'"></app-outlined-input>
+      </div>
+      <div class="login-form__input">
+        <app-outlined-input formControlName="password" [type]="'password'" [placeholder]="'Пароль'"></app-outlined-input>
+      </div>
+    </form>
+  </div>
+  <div class="login-form__buttons">
+    <button mat-stroked-button class="login-form__button" (click)="handleLoginButton()">СОЗДАТЬ</button>
+    <button mat-button class="login-form__button" routerLink="/login-admin">Вход</button>
+  </div>
+</div>

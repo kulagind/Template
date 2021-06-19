@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-side-decoration',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-decoration.component.scss']
 })
 export class SideDecorationComponent implements OnInit {
+
+  @Input() public readonly withText = true;
 
   constructor() { }
 

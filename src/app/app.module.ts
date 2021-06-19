@@ -19,6 +19,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { PressureFormComponent } from './user/components/pressure-form/pressure-form.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import { UserLoginComponent } from './user/components/user-login/user-login.component';
+import { UserRegisterComponent } from './user/components/user-register/user-register.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import {MatInputModule} from "@angular/material/input";
     PressureComponent,
     NavbarComponent,
     PressureFormComponent,
+    UserLoginComponent,
+    UserRegisterComponent,
   ],
   imports: [
     BrowserModule,

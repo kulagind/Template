@@ -10,9 +10,15 @@ import {AdminChatLayoutComponent} from "./admin/components/admin-chat-layout/adm
 import {ChatComponent} from "./shared/components/chat/chat.component";
 import {LoginFormComponent} from "./shared/components/login-form/login-form.component";
 import {LoginComponent} from "./shared/components/login/login.component";
+import {RegisterComponent} from "./shared/components/register/register.component";
+import {UserLoginComponent} from "./user/components/user-login/user-login.component";
+import {UserRegisterComponent} from "./user/components/user-register/user-register.component";
 
 const routes: Routes = [
-  { path: 'auth', component: LoginComponent },
+  { path: 'login-admin', component: LoginComponent },
+  { path: 'register-admin', component: RegisterComponent },
+  { path: 'login-user', component: UserLoginComponent },
+  { path: 'register-user', component: UserRegisterComponent },
   {
     path: 'admin', component: AdminLayoutComponent, children: [
       { path: 'patients', component: PatientsListLayoutComponent },

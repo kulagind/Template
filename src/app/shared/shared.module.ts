@@ -12,6 +12,9 @@ import {LoginComponent} from "./components/login/login.component";
 import {LoginFormComponent} from "./components/login-form/login-form.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
+import { RegisterComponent } from './components/register/register.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
+import {RouterModule} from "@angular/router";
 
 export function initFactory(authService: AuthService): () => Promise<any> {
   return (): Promise<any> => {
@@ -27,7 +30,9 @@ export function initFactory(authService: AuthService): () => Promise<any> {
     SideDecorationComponent,
     BaseHeaderComponent,
     LoginComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    RegisterComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ export function initFactory(authService: AuthService): () => Promise<any> {
     MatIconModule,
     ReactiveFormsModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ],
   providers: [
     {
@@ -47,7 +53,8 @@ export function initFactory(authService: AuthService): () => Promise<any> {
   ],
   exports: [
     ChatComponent,
-    OutlinedInputComponent
+    OutlinedInputComponent,
+    SideDecorationComponent
   ]
 })
 export class SharedModule {

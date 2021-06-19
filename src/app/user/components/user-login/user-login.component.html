@@ -1,0 +1,19 @@
+<div class="login">
+
+  <h2 class="title">Вход</h2>
+
+  <div class="form" [formGroup]="formGroup">
+
+    <mat-form-field class="form-item" appearance="outline">
+      <mat-label>СНИЛС</mat-label>
+      <input formControlName="snils" autocomplete="off" matInput>
+    </mat-form-field>
+    <mat-form-field class="form-item" appearance="outline">
+      <mat-label>Пароль</mat-label>
+      <input formControlName="password" autocomplete="off" matInput>
+    </mat-form-field>
+
+    <button mat-stroked-button (click)="handleSubmit()" color="primary">Войти</button>
+
+  </div>
+</div>

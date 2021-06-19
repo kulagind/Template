@@ -30,6 +30,8 @@ import {FullCalendarModule} from "@fullcalendar/angular";
 
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import { CalendarTimepickerComponent } from './user/components/calendar-timepicker/calendar-timepicker.component';
+import {MatTimepickerModule} from "mat-timepicker";
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -48,6 +50,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     UserLoginComponent,
     UserRegisterComponent,
     CalendarLayoutComponent,
+    CalendarTimepickerComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    FullCalendarModule
+    FullCalendarModule,
+    MatTimepickerModule
   ],
   providers: [
     {

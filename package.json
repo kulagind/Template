@@ -29,6 +29,7 @@
     "@types/chartjs": "0.0.31",
     "angular-animations": "^0.11.0",
     "chart.js": "^2.9.4",
+    "mat-timepicker": "^5.1.4",
     "ng2-cookies": "^1.0.12",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",

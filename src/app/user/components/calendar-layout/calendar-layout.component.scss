@@ -4,6 +4,19 @@
 }
 
 .calendar {
+  padding-top: 45px;
   width: 100%;
   height: 100%;
+}
+
+::ng-deep .mat-dialog-container {
+  overflow-y: hidden !important;
+}
+
+::ng-deep .fc-today-button {
+  display: none;
+}
+
+.fc-today-button {
+  display: none;
 }

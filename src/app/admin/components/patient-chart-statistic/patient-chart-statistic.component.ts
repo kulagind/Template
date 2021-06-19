@@ -28,7 +28,6 @@ export class PatientChartStatisticComponent implements OnInit, AfterViewInit, On
   }
 
   public ngAfterViewInit(): void {
-    setTimeout(() => this.init(),100)
   }
 
   private getData(): number[] {
@@ -40,18 +39,27 @@ export class PatientChartStatisticComponent implements OnInit, AfterViewInit, On
 
   private init(): void {
 
-    const values = this.getData();
+    const minValues = this.getData();
+    const maxData = this.measurements
+      .map(value => {
+        return value.upperPoint
+      })
 
-    const labels = Array(values.length).fill('')
-    console.log(labels)
+    const labels = this.measurements.map(value => value.date);
     const data = {
       labels: labels,
       datasets: [
         {
-          label: 'Давление',
+          label: 'Минимальное Давление',
           backgroundColor: this.gradient.getGradient(),
           borderColor: 'rgba(255, 255, 255, 0)',
-          data: this.getData(),
+          data: minValues,
+        },
+        {
+          label: 'Максимальное Давление',
+          backgroundColor: this.gradient.getSecondaryGradient(),
+          borderColor: 'rgba(0, 0, 65, 0)',
+          data: maxData,
         },
       ]
     };

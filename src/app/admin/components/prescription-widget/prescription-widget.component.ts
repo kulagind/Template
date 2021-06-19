@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Prescription } from '../../types/prescription.type';
-import { PrescriptionTypes } from '../../enums/prescription-types.enum';
-import { MatDialog } from '@angular/material/dialog';
-import { PrescriptionEditDialogComponent } from '../prescription-edit-dialog/prescription-edit-dialog.component';
+import {Component, OnInit} from '@angular/core';
+import {Prescription} from '../../types/prescription.type';
+import {PrescriptionTypes} from '../../enums/prescription-types.enum';
+import {MatDialog} from '@angular/material/dialog';
+import {PrescriptionEditDialogComponent} from '../prescription-edit-dialog/prescription-edit-dialog.component';
+import {RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-prescription-widget',
-  templateUrl: './prescription-widget.component.html',
+  templateUrl: './prescription-widget.' +
+    'component.html',
   styleUrls: ['./prescription-widget.component.scss']
 })
 export class PrescriptionWidgetComponent implements OnInit {
@@ -29,9 +31,10 @@ export class PrescriptionWidgetComponent implements OnInit {
     },
   ]
 
-  constructor(
-    private dialog: MatDialog,
-  ) { }
+  constructor(private router: RouterOutlet,
+              private dialog: MatDialog,
+  ) {
+  }
 
   public ngOnInit(): void {
   }
@@ -48,6 +51,7 @@ export class PrescriptionWidgetComponent implements OnInit {
   public handleCreateButton(): void {
     this.dialog.open(PrescriptionEditDialogComponent, {
       data: {
+        id: this.router.activatedRoute.snapshot.params.id,
         editMode: false,
       }
     });

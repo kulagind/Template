@@ -1,6 +1,11 @@
 {
   "/api/*": {
-    "target": "http://172.25.0.20:8000",
+    "target": "https://кардио-контроль.рф",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api2/*": {
+    "target": "https://кардио-контроль.рф",
     "secure": false,
     "changeOrigin": true
   }

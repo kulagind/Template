@@ -36,7 +36,8 @@ const routes: Routes = [
     path: 'user', component: LayoutComponent, canActivate: [ UserGuard ], children: [
       { path: 'chat', component: ChatComponent, canActivate: [ UserGuard ] },
       { path: 'pressure', component: PressureComponent, canActivate: [ UserGuard ] },
-      { path: 'treatment', component: CalendarLayoutComponent, canActivate: [ UserGuard ] },
+      { path: 'treatment', component: TreatmentComponent, canActivate: [ UserGuard ] },
+      { path: 'calendar', component: CalendarLayoutComponent, canActivate: [ UserGuard ] },
       { path: '**', redirectTo: 'user' }
     ]
   }

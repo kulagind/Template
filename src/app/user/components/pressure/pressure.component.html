@@ -1,16 +1,16 @@
-<div class="pressure-form">
+<div class="pressure-form" [formGroup]="formGroup">
   <mat-form-field class="form-item" appearance="outline">
     <mat-label>SYS</mat-label>
-    <input autocomplete="off" matInput>
+    <input formControlName="upperPoint" autocomplete="off" matInput>
   </mat-form-field>
   <mat-form-field class="form-item" appearance="outline">
     <mat-label>DIA</mat-label>
-    <input autocomplete="off" matInput>
+    <input formControlName="lowerPoint" autocomplete="off" matInput>
   </mat-form-field>
   <mat-form-field class="form-item" appearance="outline">
     <mat-label>Pulse</mat-label>
-    <input autocomplete="off" matInput>
+    <input formControlName="pulse" autocomplete="off" matInput>
   </mat-form-field>
 
-  <button mat-stroked-button color="primary">Сохранить</button>
+  <button mat-stroked-button color="primary" (click)="submit()">Сохранить</button>
 </div>

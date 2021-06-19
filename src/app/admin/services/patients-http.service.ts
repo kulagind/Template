@@ -23,4 +23,8 @@ export class PatientsHttpService {
   public getMeasurements(id: string): Observable<any> {
     return this.http.get(`api/measurements/${id}`);
   }
+
+  public sendMeasurements(id: string, options: any): Observable<any> {
+    return this.http.post(`api/measurements/${id}/`, { ...options });
+  }
 }

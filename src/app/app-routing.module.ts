@@ -17,6 +17,7 @@ import {AdminGuard} from "./admin/services/admin.guard";
 import {UserGuard} from "./user/services/user.guard";
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'login-user'  },
   { path: 'login-admin', component: LoginComponent },
   { path: 'register-admin', component: RegisterComponent },
   { path: 'login-user', component: UserLoginComponent },

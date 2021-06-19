@@ -20,4 +20,8 @@ export class AdminAuthHttpService {
     return this.http.post<string>(this.apiRegistry, options);
   }
 
+  public getAdmin(id): Observable<any> {
+    return this.http.get<any>(`api/doctors/${id}`);
+  }
+
 }

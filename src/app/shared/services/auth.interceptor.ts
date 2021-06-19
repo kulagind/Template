@@ -15,9 +15,6 @@ export class ParamInterceptor implements HttpInterceptor {
 
     if (this.userService.token || this.adminService.token) {
 
-      console.log(this.adminService.token)
-      const uid = this.adminService.token ?? this.userService.token;
-
       const paramReq = req.clone({
         headers: req.headers.set(
           'X-AUTH',

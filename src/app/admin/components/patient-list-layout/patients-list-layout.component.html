@@ -1,9 +1,9 @@
 <div class="patient-list-layout">
 
-  <app-applicant-list-search class="search"></app-applicant-list-search>
+  <app-applicant-list-search (search)="handleSearch($event)" class="search"></app-applicant-list-search>
 
   <div class="patient-list-layout__table">
-    <app-patients-table></app-patients-table>
+    <app-patients-table [searchContext$]="searchContext$"></app-patients-table>
   </div>
 <!--  <div class="patient-list-layout__controls">-->
 <!--    <div class="patient-list-layout__paginator">-->

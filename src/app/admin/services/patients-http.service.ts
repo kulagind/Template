@@ -13,7 +13,7 @@ export class PatientsHttpService {
   constructor(private readonly http: HttpClient) { }
 
   public getPatients(): Observable<any> {
-    return this.http.get<any>(this.api)
+    return this.http.get<any>(`${this.api}`)
   }
 
   public getPatient(id: string): Observable<any> {

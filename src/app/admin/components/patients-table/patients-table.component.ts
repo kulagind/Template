@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Patient} from '../../types/patient.type';
 import {PatientsHttpService} from "../../services/patients-http.service";
 import {Router, RouterOutlet} from "@angular/router";
 import {PrivatePatientsHttpService} from "../../services/private-patients-http.service";
 import {filter, flatMap, switchMap, toArray} from "rxjs/operators";
 import {flatten} from "@angular/compiler";
-import {of} from "rxjs";
+import {Observable, of} from "rxjs";
 
 @Component({
   selector: 'app-patients-table',
@@ -14,6 +14,8 @@ import {of} from "rxjs";
 })
 export class PatientsTableComponent implements OnInit {
 
+  @Input()
+  public searchContext$: Observable<string>;
   public patients: Patient[];
 
   constructor(
@@ -49,7 +51,6 @@ export class PatientsTableComponent implements OnInit {
 
   public handlePatientSelect(patient: Patient): void {
     this.router.navigate([`admin/patients/${patient.uid}`]);
-
   }
 
   public handlePatientAdd(id: string) {

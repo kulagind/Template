@@ -32,6 +32,7 @@ export class LoginFormComponent implements OnInit {
       .login(this.formGroup.value)
       .subscribe({
         next: (value) => {
+          console.log(value)
           this.adminService.token = value;
           this.router.navigate(['/admin/patients'])
         },

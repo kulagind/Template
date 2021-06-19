@@ -33,6 +33,7 @@ export class UserLoginComponent implements OnInit {
         filter(value => !!value)
       )
       .subscribe((value) => {
+        console.log(value)
         this.userService.token = value;
         this.router.navigate(['user']);
       })

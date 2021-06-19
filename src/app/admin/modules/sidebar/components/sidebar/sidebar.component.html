@@ -32,8 +32,9 @@
 
       <div class="sidebar-menu-item sidebar-menu-item_settings">
         <app-sidebar-item
-          value="Настройки"
-          routerLink="settings"
+          (click)="handleLogout()"
+          value="Выход"
+          routerLink="/login-admin"
           routerLinkActive>
         </app-sidebar-item>
       </div>

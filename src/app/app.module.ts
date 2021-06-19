@@ -15,12 +15,13 @@ import {CommonModule} from "@angular/common";
 import {NavbarComponent} from './user/components/navbar/navbar.component';
 
 import {SharedModule} from "./shared/shared.module";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { PressureFormComponent } from './user/components/pressure-form/pressure-form.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { UserLoginComponent } from './user/components/user-login/user-login.component';
 import { UserRegisterComponent } from './user/components/user-register/user-register.component';
+import {ParamInterceptor} from "./shared/services/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -46,6 +47,13 @@ import { UserRegisterComponent } from './user/components/user-register/user-regi
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ParamInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { complexSidenavAnimation } from './sidebar.animation';
 import { BehaviorSubject } from 'rxjs';
 import { delay } from 'rxjs/operators';
+import {AdminService} from "../../../../services/admin.service";
 
 @Component({
   selector: 'app-sidebar',
@@ -17,8 +18,12 @@ export class SidebarComponent implements OnInit {
       delay(0)
     );
 
-  constructor() { }
+  constructor(private readonly adminService: AdminService) { }
 
   public ngOnInit(): void { }
+
+  public handleLogout(): void {
+    this.adminService.logout();
+  }
 
 }

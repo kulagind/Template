@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +25,16 @@ import { environment } from '../environments/environment';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ParamInterceptor } from './shared/services/auth.interceptor';
+import { CalendarLayoutComponent } from './user/components/calendar-layout/calendar-layout.component';
+import {FullCalendarModule} from "@fullcalendar/angular";
+
+import dayGridPlugin from "@fullcalendar/daygrid";
+import interactionPlugin from "@fullcalendar/interaction";
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin,
+]);
 
 
 @NgModule({
@@ -36,6 +47,7 @@ import { ParamInterceptor } from './shared/services/auth.interceptor';
     PressureFormComponent,
     UserLoginComponent,
     UserRegisterComponent,
+    CalendarLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +67,8 @@ import { ParamInterceptor } from './shared/services/auth.interceptor';
     }),
     HttpClientModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FullCalendarModule
   ],
   providers: [
     {

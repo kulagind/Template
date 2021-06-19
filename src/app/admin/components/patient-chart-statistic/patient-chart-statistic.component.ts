@@ -55,12 +55,6 @@ export class PatientChartStatisticComponent implements OnInit, AfterViewInit, On
           borderColor: 'rgba(255, 255, 255, 0)',
           data: minValues,
         },
-        {
-          label: 'Максимальное Давление',
-          backgroundColor: this.gradient.getSecondaryGradient(),
-          borderColor: 'rgba(0, 0, 65, 0)',
-          data: maxData,
-        },
       ]
     };
 

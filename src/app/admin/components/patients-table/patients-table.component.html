@@ -12,8 +12,6 @@
     <div class="patients-table__cell patients-table__header-cell">
       Телефон
     </div>
-    <div class="patients-table__cell patients-table__header-cell patients-table__cell-options">
-    </div>
   </div>
   <div class="patients-table__row" *ngFor="let patient of patients" (click)="handlePatientSelect(patient)">
     <div class="patients-table__cell">
@@ -27,9 +25,6 @@
     </div>
     <div class="patients-table__cell">
       {{patient.phoneNumber}}
-    </div>
-    <div class="patients-table__cell patients-table__cell-options">
-      <button mat-button color="primary" (click)="$event.stopPropagation(); handlePatientAdd(patient.uid)"> Добавить </button>
     </div>
   </div>
 </div>

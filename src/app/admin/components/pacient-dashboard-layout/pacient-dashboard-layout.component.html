@@ -28,6 +28,8 @@
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
     <div class="dashboard-widget widget-bar"></div>
     <app-prescription-widget class="dashboard-widget"></app-prescription-widget>
+
+    <app-patient-preview [patient]="patient$ | async" class="dashboard-widget"></app-patient-preview>
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
 <!--    <app-patient-chart-statistic class="dashboard-widget"></app-patient-chart-statistic>-->

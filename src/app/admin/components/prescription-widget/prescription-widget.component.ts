@@ -23,6 +23,7 @@ export class PrescriptionWidgetComponent implements OnInit {
     private prescriptionService: PrescriptionService,
   ) {
     this.prescriptions$ = this.prescriptionService.prescriptions;
+    this.prescriptions$.subscribe(asdasd => console.log(asdasd));
   }
 
   public ngOnInit(): void {

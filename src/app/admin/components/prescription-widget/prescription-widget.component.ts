@@ -52,6 +52,7 @@ export class PrescriptionWidgetComponent implements OnInit {
     this.dialog.open(PrescriptionEditDialogComponent, {
       data: {
         editMode: false,
+        uid: this.patientId,
       }
     }).afterClosed()
       .pipe(

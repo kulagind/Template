@@ -1,14 +1,14 @@
 <div class="messages-wrapper">
-  <div class="messages">
-    <div *ngFor="let message of (chatService.messages$ | async)"
+  <div #messagesElem class="messages">
+    <div *ngFor="let message of (messages | async)?.messages"
          class="messages__message"
-         [ngStyle]="{'align-self': message.authorId !== authService.id ? 'flex-start' : 'flex-end'}">
+         [ngStyle]="{'align-self': message?.authorId !== cuckoldService.getAuth() ? 'flex-start' : 'flex-end'}">
       <app-message [message]="message" [id]="authService.id"></app-message>
     </div>
   </div>
   <div class="message__input_wrapper">
-    <input type="text" class="message__input" placeholder="Сообщение">
-    <div class="message__icon">
+    <input type="text" #input class="message__input" placeholder="Сообщение" (keydown.enter)="sendMessage(input.value, input)">
+    <div class="message__icon" (click)="sendMessage(input.value, input)">
       <mat-icon class="example-tab-icon">send</mat-icon>
     </div>
   </div>

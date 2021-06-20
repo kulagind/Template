@@ -6,6 +6,7 @@ import {PrivatePatientsHttpService} from "../../services/private-patients-http.s
 import {filter, flatMap, switchMap, toArray} from "rxjs/operators";
 import {flatten} from "@angular/compiler";
 import {Observable, of} from "rxjs";
+import { ChatService } from '../../../shared/components/chat/chat.service';
 
 @Component({
   selector: 'app-patients-table',
@@ -20,6 +21,7 @@ export class PatientsTableComponent implements OnInit {
 
   constructor(
     private readonly privatePatientHttpService: PrivatePatientsHttpService,
+    private chatService: ChatService,
     private readonly patientsHttpService: PatientsHttpService, private readonly router: Router) {
     // this.patientsHttpService
     //   .getPatients()
@@ -54,6 +56,13 @@ export class PatientsTableComponent implements OnInit {
   }
 
   public handlePatientAdd(id: string) {
+
+    // @ts-ignore
+    this.chatService.createChat({
+      patientId: id,
+    });
+
+
     this.privatePatientHttpService
       .addPrivatePatient(id)
       .pipe(

@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {filter, flatMap, pluck, switchMap} from "rxjs/operators";
+import { filter, flatMap, pluck, switchMap, tap } from 'rxjs/operators';
 import {PatientsHttpService} from "../../services/patients-http.service";
 import {firstScaleAppearance} from "./pacient-dashboard-layout.animation";
 import {Observable} from "rxjs";
 import {Patient} from "../../types/patient.type";
+import { ChatService } from '../../../shared/components/chat/chat.service';
 
 @Component({
   selector: 'app-pacient-dashboard-layout',
@@ -24,7 +25,11 @@ export class PacientDashboardLayoutComponent implements OnInit {
   public patient$: Observable<Patient | any>;
   public measurement$: Observable<any>;
 
-  constructor(private readonly router: ActivatedRoute, private readonly patientHttpService: PatientsHttpService) { }
+  constructor(
+    private readonly router: ActivatedRoute,
+    private readonly patientHttpService: PatientsHttpService,
+    public chatService: ChatService,
+  ) { }
 
   public ngOnInit(): void {
     this.listenRouter();
@@ -33,6 +38,11 @@ export class PacientDashboardLayoutComponent implements OnInit {
   public listenRouter(): void {
     this.measurement$ = this.router.params
       .pipe(
+        tap((params) => {
+          if (this.chatService.status === 'idle') {
+            this.chatService.fetchChats(!!params.id);
+          }
+        }),
         filter(value => !!value),
         pluck('id'),
         switchMap(value => {

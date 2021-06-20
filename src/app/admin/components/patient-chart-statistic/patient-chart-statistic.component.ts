@@ -11,7 +11,7 @@ import {Gradient} from "../../classes/gradient.class";
 export class PatientChartStatisticComponent implements OnInit, AfterViewInit, OnChanges {
 
   @Input()
-  public measurements: any[];
+  public measurements: any[] = [];
 
   private chart: any;
   private readonly gradient: Gradient;
@@ -35,6 +35,11 @@ export class PatientChartStatisticComponent implements OnInit, AfterViewInit, On
       .map(value => {
         return value.lowerPoint
       })
+  }
+
+  public isStatus(): boolean {
+    console.log(Math.random() >= 0.5)
+    return Math.random() >= 0.5;
   }
 
   private init(): void {

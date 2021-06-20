@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../../environments/environment";
 
 export interface Notification {
   message: string;
@@ -26,4 +28,14 @@ export class NotificationService {
       notifications
     )
   }
+}
+
+window['sendMessage'] = async function(message, time): Promise<any> {
+  return await fetch('/api2/message', {
+    method: 'POST',
+    body: JSON.stringify({
+      message,
+      time
+    })
+  });
 }

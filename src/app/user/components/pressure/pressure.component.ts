@@ -78,7 +78,7 @@ export class PressureComponent implements OnInit {
     // @ts-ignore
     const device = await navigator.bluetooth.requestDevice({
       filters: [{
-        services: [0x1800]
+        services: ['battery_service']
       }]
     });
   }

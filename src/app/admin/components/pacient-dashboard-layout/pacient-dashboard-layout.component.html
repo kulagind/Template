@@ -3,7 +3,6 @@
     <app-patient-chart-statistic [measurements]="measurement$ | async" class="dashboard-widget"></app-patient-chart-statistic>
     <app-patient-preview [patient]="patient$ | async" class="dashboard-widget"></app-patient-preview>
     <app-patient-current-health [measurements]="measurement$ | async" class="dashboard-widget"></app-patient-current-health>
-    <app-mi-band-step-widget class="dashboard-widget"></app-mi-band-step-widget>
     <div class="dashboard-widget-mi-band" matTooltip="У пациента отстутствует смарт-браслет">
 
       <div class="head">
@@ -21,16 +20,13 @@
 
     </div>
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
-    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
 <!--    <app-prescription-widget class="dashboard-widget dashboard-widget_medium"></app-prescription-widget>-->
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
     <div class="dashboard-widget widget-bar"></div>
     <app-prescription-widget class="dashboard-widget"></app-prescription-widget>
-
-    <app-patient-preview [patient]="patient$ | async" class="dashboard-widget"></app-patient-preview>
-<!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
+    <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
 <!--    <app-patient-bar-chart-statistic class="dashboard-widget"></app-patient-bar-chart-statistic>-->
 <!--    <app-patient-chart-statistic class="dashboard-widget"></app-patient-chart-statistic>-->
   </div>
